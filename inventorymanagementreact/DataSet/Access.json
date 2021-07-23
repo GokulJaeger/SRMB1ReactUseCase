@@ -1,0 +1,22 @@
+{
+    "admin": [
+        {
+            "id": 1,
+            "user": "admin",
+            "password": "admin@123",
+            "hint": "AdminNumber",
+            "phone":"9384757730",
+            "aadhar":"216072458696"
+        }
+    ],
+    "manager": [
+        {
+            "id": 1,
+            "user": "jaeger",
+            "password": "jaeger@123",
+            "hint": "JaegerNumber",
+            "phone":"9384757730",
+            "aadhar":"216072458696"
+        }
+    ]
+}

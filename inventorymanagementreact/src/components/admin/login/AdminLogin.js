@@ -84,7 +84,7 @@ export default function AdminLogin() {
         if(submitted){
             history.push('/admindashboard');
         }
-    },[submitted])
+    },[submitted, history])
 
     const validate = (values) => {
         let error = {};

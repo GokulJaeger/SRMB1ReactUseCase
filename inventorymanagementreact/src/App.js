@@ -8,6 +8,7 @@ import ManagementLogin from './components/management/ManagementLogin';
 import AdminDashboard from './components/admin/dashboard/AdminDashboard';
 import ForgotCredentials from './components/admin/login/ForgotCredentials';
 import NavBar from './components/header/NavBar';
+import About from './components/about/About';
 // import UseToken from './components/admin/login/UseToken';
 // import 'https://kit.fontawesome.com/6044546ef2.js';
 // import 'https://code.jquery.com/jquery-3.4.1.min.js';
@@ -49,7 +50,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <div>
         <NavBar/>
+        </div>
         <Switch>
           <Route path='/' exact component={Home}></Route>
           <Route path='/admin' exact component={AdminLogin}></Route>
@@ -57,6 +60,7 @@ function App() {
           <Route path='/management' exact component={ManagementLogin}></Route>
           <Route path='/admindashboard' exact component={AdminDashboard}></Route>
           <Route path='/forgotcredentials' exact component={ForgotCredentials}></Route>
+          <Route path='/about' exact component={About}></Route>
         </Switch>
       </Router>
     </div >

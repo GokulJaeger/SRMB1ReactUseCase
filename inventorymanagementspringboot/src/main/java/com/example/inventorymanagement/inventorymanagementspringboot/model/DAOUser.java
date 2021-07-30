@@ -35,7 +35,7 @@ public class DAOUser {
             		uniqueConstraints = @UniqueConstraint(columnNames = {
                             "user_id", "role_id" }))
     private List<Role> roles;
-	
+	//enabled
     
 	/*
 	 * @JoinTable(name = "prod_colour", joinColumns = {

@@ -1,30 +1,30 @@
-package com.example.inventorymanagement.inventorymanagementspringboot.model;
+// package com.example.inventorymanagement.inventorymanagementspringboot.model;
 
-public class AuthenticationResponse {
-	private String token;
+// public class AuthenticationResponse {
+// 	private String token;
 
-	private String[] roles;
+// 	private String[] roles;
 	
-	public AuthenticationResponse() {}
+// 	public AuthenticationResponse() {}
 
-	public AuthenticationResponse(String token) {
-		super();
-		this.token = token;
-	}
+// 	public AuthenticationResponse(String token) {
+// 		super();
+// 		this.token = token;
+// 	}
 
-	public String getToken() {
-		return token;
-	}
+// 	public String getToken() {
+// 		return token;
+// 	}
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+// 	public void setToken(String token) {
+// 		this.token = token;
+// 	}
 
-	public String[] getRoles() {
-		return roles;
-	}
+// 	public String[] getRoles() {
+// 		return roles;
+// 	}
 
-	public void setRoles(String[] roles) {
-		this.roles = roles;
-	}
-}
+// 	public void setRoles(String[] roles) {
+// 		this.roles = roles;
+// 	}
+// }

@@ -49,10 +49,10 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <NavBar />
+      </div>
       <Router>
-        <div>
-        <NavBar/>
-        </div>
         <Switch>
           <Route path='/' exact component={Home}></Route>
           <Route path='/admin' exact component={AdminLogin}></Route>

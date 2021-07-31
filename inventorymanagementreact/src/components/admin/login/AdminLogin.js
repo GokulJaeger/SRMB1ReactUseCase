@@ -30,7 +30,7 @@ export default function AdminLogin() {
     const [apiValues, setApiValues] = useState({});
 
     useEffect(() => {
-        axios.get("http://localhost:8000/admin").then((x) => {
+        axios.get("http://localhost:8080/api/admin").then((x) => {
             console.warn("api data", x);
             setApiValues(x.data);
         });
@@ -97,7 +97,7 @@ export default function AdminLogin() {
         }
         console.log(Object.keys(error).length);
         if (Object.keys(error).length === 0) {
-            if (apiValues[0].user === loginValues.username && apiValues[0].password === loginValues.password) {
+            if (apiValues[0].username === loginValues.username && apiValues[0].password === loginValues.password) {
                 // history.push('/admindashboard');
                 setSubmitted(true);
             }

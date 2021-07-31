@@ -5,66 +5,44 @@ import javax.persistence.FetchType;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
+@Table(name = "grocery")
 public class Grocery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
-    @Size(min = 5, message = "Product code must have atleast 5 characters")
     private String pcode;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
     private String pname;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
     private String pdesc;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
     private String pcatg;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
     private double pqty;
 
-    @NotNull
-    @NotBlank 
-    @NotEmpty
     private double pprice;
 
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     @Temporal(TemporalType.DATE)
     private Date manuDate;
 
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     @Temporal(TemporalType.DATE)
     private Date expDate;
 

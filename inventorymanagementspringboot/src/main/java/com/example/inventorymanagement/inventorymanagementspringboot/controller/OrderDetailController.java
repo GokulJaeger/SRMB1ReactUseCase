@@ -18,15 +18,11 @@ import com.example.inventorymanagement.inventorymanagementspringboot.repository.
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
-// import io.swagger.annotations.Api;
-// import io.swagger.annotations.ApiOperation;
-// import io.swagger.annotations.ApiResponse;
-// import io.swagger.annotations.ApiResponses;
 
-// @Api(value="StudentController", description = "API Service that manages the different payment modes support by SwiftPayment API Project")
 @RestController
-@RequestMapping("/api/orderdetail")
+@RequestMapping("/api/orderdetails")
 public class OrderDetailController {  
     private final VegFruitRepository vegfruitrepo;
     private final OrderDetailsRepository orderdetailrepo;
@@ -38,7 +34,7 @@ public class OrderDetailController {
         this.vegfruitrepo = vegfruitrepo;
     }
 
-    @PostMapping
+    @PostMapping("/orderdetails")
     public ResponseEntity<OrderDetails> create(@Valid @RequestBody OrderDetails orderdetail1) {
         OrderDetails savedorderdetail = orderdetailrepo.save(orderdetail1);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -46,15 +42,8 @@ public class OrderDetailController {
         logg.info("Created!....");
         return ResponseEntity.created(location).body(savedorderdetail);
     }
-
-    // @ApiOperation(value="Creation of Customer Details", response = Iterable.class, tags = "regiserCustomer")
-    // @ApiResponses(value={ 
-    //     @ApiResponse(code = 200, message = "RSC-Success|OK"),
-    //     @ApiResponse(code = 401, message = "RSC-not authorized!"), 
-    //     @ApiResponse(code = 403, message = "RSC-forbidden!!!"),
-    //     @ApiResponse(code = 404, message = "RSC-not found!!!") })
     @PutMapping("/{id}")
-    public ResponseEntity<OrderDetails> update(@PathVariable Integer id, @Valid @RequestBody OrderDetails orderdetail2) {
+    public ResponseEntity<OrderDetails> update(@PathVariable UUID id, @Valid @RequestBody OrderDetails orderdetail2) {
         Optional<OrderDetails> optionalOrderDetail = orderdetailrepo.findById(id);
         if (!optionalOrderDetail.isPresent()) {
             logg.info("Updated Failed!....");
@@ -68,7 +57,7 @@ public class OrderDetailController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<OrderDetails> delete(@PathVariable Integer id) {
+    public ResponseEntity<OrderDetails> delete(@PathVariable UUID id) {
         Optional<OrderDetails> optionalOderDetails = orderdetailrepo.findById(id);
         if (!optionalOderDetails.isPresent()) {
             logg.info("Deletion Failed!....");
@@ -81,7 +70,7 @@ public class OrderDetailController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<OrderDetails> getById(@PathVariable Integer id) {
+    public ResponseEntity<OrderDetails> getById(@PathVariable UUID id) {
         Optional<OrderDetails> optionalOrderDetails = orderdetailrepo.findById(id);
         if (!optionalOrderDetails.isPresent()) {
             logg.info("Fetch Failed!....");

@@ -31,9 +31,9 @@ public class GroceryController {
         this.orderdetailrepo = orderdetailrepo;
     }
 
-    @PostMapping
+    @PostMapping("/grocery")
     public ResponseEntity<Grocery> create(@RequestBody @Valid Grocery grocery1) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(grocery1.getOrderdetails().getOrdercode());
+        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(grocery1.getOrderdetails().getId());
         if (!optionalOrderdetails.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
@@ -49,7 +49,7 @@ public class GroceryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Grocery> update(@RequestBody @Valid Grocery grocery2, @PathVariable Integer id) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(grocery2.getOrderdetails().getOrdercode());
+        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(grocery2.getOrderdetails().getId());
         if (!optionalOrderdetails.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }

@@ -30,9 +30,9 @@ public class VegFruitController {
         this.orderdetailrepo = orderdetailrepo;
     }
 
-    @PostMapping
+    @PostMapping("/vegfruit")
     public ResponseEntity<VegFruit> create(@RequestBody @Valid VegFruit vegfruit) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit.getOrderdetails().getOrdercode());
+        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit.getOrderdetails().getId());
         if (!optionalOrderdetails.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
@@ -48,7 +48,7 @@ public class VegFruitController {
 
     @PutMapping("/{id}")
     public ResponseEntity<VegFruit> update(@RequestBody @Valid VegFruit vegfruit2, @PathVariable Integer id) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit2.getOrderdetails().getOrdercode());
+        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit2.getOrderdetails().getId());
         if (!optionalOrderdetails.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-// import './AdminLogin.css';
-// import swal from 'sweetalert';
 import AdminLoginError from './AdminLoginError';
-// import PropTypes from 'prop-types';
 import axios from 'axios';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/js/bootstrap.js';
 
 // async function loginUser(credentials) {
 //     return fetch('http://localhost:8080/login', {

@@ -1,0 +1,201 @@
+/* :root {
+    --primColor: #AFE1AF;
+    --secoColor: #555555;
+    --cornerRad: 10px;
+  }
+  body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  details {
+    margin-left: 30px;
+    margin-top:30px;
+  }
+  hr{
+    border: 2px solid #555;
+  }
+  summary {
+    writing-mode: vertical-lr;
+    text-align: center;
+    padding: 12px 10px;
+    width: 23px;
+    height: 17px;
+    background-color: var(--primColor);
+    border: 2px solid var(--secoColor);
+    border-radius: var(--cornerRad);
+    color: var(--secoColor);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 200ms ease-in-out 0s;
+  }
+  summary::before,
+  summary::after {
+    position: static;
+    top: 0;
+    left: 0;
+  }
+  summary::before {
+    content: "";
+  }
+  summary::after {
+    content: "III";
+    letter-spacing: -1px;
+  }
+  summary:hover {
+    transform: scale(1.1);
+  }
+  summary::marker {
+    font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .menu {
+    animation-name: menuAnim;
+  }
+  details[open] summary::before {
+    content: "X";
+  }
+  details[open] summary::after {
+    content: "";
+  }
+  .menu {
+    height: 0;
+    width: fit-content;
+    border-radius: var(--cornerRad);
+    background-color: var(--primColor);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    animation: closeMenu 300ms ease-in-out forwards;
+  }
+  .menu a {
+    padding: 12px 24px;
+    margin: 0 16px;
+    color: var(--secoColor);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    text-align: center;
+    transition: filter 200ms linear 0s;
+  }
+  .menu a:nth-of-type(1) {
+    padding-top: 24px;
+  }
+  .menu a:nth-last-of-type(1) {
+    border-bottom: none;
+  }
+  .menu a:hover {
+    filter: brightness(200%);
+  }
+  details::before {
+    content: "Inventory Maintenance System";
+    color: var(--secoColor);
+    background-color: var(--primColor);
+    position: absolute;
+    margin-left: -155px;
+    padding: 10px 10px;
+    opacity: 2.4;
+    border-radius: 5px;
+  }
+  details[open]::before {
+    animation: fadeMe 300ms linear forwards;
+  }
+  @keyframes menuAnim {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 180px;
+    }
+  }
+  @keyframes fadeMe {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+   */
+
+   /* smoothscroll */
+  .ul{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(50%);
+    margin: 0;
+    padding: 0;
+    z-index: 1; 
+  }
+  .ul li{
+    list-style: none;
+  }
+  .container{
+    width: 100%;
+    height: 100vh;
+  }
+  .container div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+   
+  .container div h1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; 
+    margin: 0;
+    padding: 0;
+    font-size: 8rem;
+    color: #fff;
+  }
+ .ul li a{
+    display: block;
+    text-decoration: none;
+    height: 30px;
+    font-size: 24px;
+    background: #fff;
+    width: 140px;
+    color: #262626;
+    margin: 4px 0;
+    padding-left: 15px;
+    text-transform: uppercase;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    line-height:30px;
+  }
+ .ul li a:hover{
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+  }
+  .container{
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-Y: scroll;
+  }
+  .container div#maintenance{
+    background-color: #00ced1;
+  }
+  .container div#checkgoods{
+    background-color: #f05855;
+  }
+  .container div#trick{
+    background-color: #2bb673;
+  }
+  .container div#dot{
+    background-color: #2bb673;
+  }
+  .container div#com{
+    background-color: #c72339;
+  }

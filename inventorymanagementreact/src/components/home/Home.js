@@ -1,105 +1,52 @@
 import React from 'react';
 import './Home.css';
 
+
 export default function Home() {
     return (
-        <div>
-            {/* <div className="container h-100">
-                <div className="row align-middle">
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-1">
-                            <img src="\assets\admin2.png"/>
-                            <div className="txt">
-                                <h1>BRANDING AND <br />
-                                    CORPORATE DESIGN</h1>
-                                <p>Visual communication and problem-solving</p>
-                            </div>
-                            <a href="#">more</a>
-                            <div className="ico-card">
-                                <i className="fa fa-rebel"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-2">
-                            <img src="\assets\manager.png" />
-                            <div className="txt">
-                                <h1>Web Front-End <br />
-                                    SOLUTIONS</h1>
-                                <p>How design is implemented on the web.</p>
-                            </div>
-                            <a href="#">more</a>
-                            <div className="ico-card">
-                                <i className="fa fa-codepen"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-3">
-                            <img src="\assets\checker.png" />
-                            <div className="txt">
-                                <h1>UX/UI WEBsite <br />AND MOBILE app</h1>
-                                <p>User Interface and User Experience Design.</p>
-                            </div>
-                            <a href="#">more</a>
-                            <div className="ico-card">
-                                <i className="fa fa-empire"></i>
-                            </div>
-                        </div>
-                    </div>
-
+        <div className="divbg">
+            {/* Card1 */}
+            <div className="blog1-card1 spring-fever">
+                <div className="title-content">
+                    <h3>ADMIN</h3>
+                    <div className="intro">Inspiration </div>
                 </div>
-            </div> */}
-            <div className="container h-100">
-                <div className="row align-middle">
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-1">
-                            <div className="txt">
-                                <h1>BRANDING AND
-                                    CORPORATE DESIGN</h1>
-                                <p>Visual communication and problem-solving</p>
-                            </div>
-                            <nav>
-                                <a href="/admin">more</a>
-                            </nav>
-                            <div className="ico-card">
-                                <i className="fa fa-rebel"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-2">
-                            <div className="txt">
-                                <h1>Web Front-End
-                                    SOLUTIONS</h1>
-                                <p>How design is implemented on the web.</p>
-                            </div>
-                            <nav>
-                                <a href="/management">more</a>
-                            </nav>
-                            <div className="ico-card">
-                                <i className="fa fa-codepen"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4 column">
-                        <div className="card gr-3">
-                            <div className="txt">
-                                <h1>UX/UI WEBsite
-                                    AND MOBILE app</h1>
-                                <p>User Interface and User Experience Design.</p>
-                            </div>
-                            <nav>
-                                <a href="/maintenance">more</a>
-                            </nav>
-                            <div className="ico-card">
-                                <i className="fa fa-empire"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div >
-            </div >
+                <div className="card-info">
+                    <a href="/admin">Enter<span className="licon icon-arr icon-black"></span></a>
+                </div>
+                <div className="utility-info">
+                </div>
+                <div className="gradient-overlay"></div>
+                <div className="color-overlay"></div>
+            </div>
+            {/* Card2 */}
+            <div className="blog2-card2 spring-fever">
+                <div className="title-content">
+                    <h3>MANAGER</h3>
+                    <div className="intro">Inspiration</div>
+                </div>
+                <div className="card-info">
+                    <a href="/management">Enter<span className="licon icon-arr icon-black"></span></a>
+                </div>
+                <div className="utility-info">
+                </div>
+                <div className="gradient-overlay"></div>
+                <div className="color-overlay"></div>
+            </div>
+            {/* Card3 */}
+            <div className="blog3-card3 spring-fever">
+                <div className="title-content">
+                    <h3>CHECKER</h3>
+                    <div className="intro">Inspiration</div>
+                </div>
+                <div className="card-info">
+                    <a href="/maintenance">Enter<span className="licon icon-arr icon-black"></span></a>
+                </div>
+                <div className="utility-info">
+                </div>
+                <div className="gradient-overlay"></div>
+                <div className="color-overlay"></div>
+            </div>
         </div >
     )
 }

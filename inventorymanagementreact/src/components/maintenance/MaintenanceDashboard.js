@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function BillingDesk() {
+export default function MaintenanceDashboard() {
     return (
         <div>
-            <h1>Billing Desk</h1>
+            
         </div>
     )
 }

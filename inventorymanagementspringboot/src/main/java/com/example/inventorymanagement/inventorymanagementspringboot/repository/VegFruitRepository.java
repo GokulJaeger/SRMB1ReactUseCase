@@ -4,6 +4,6 @@ import com.example.inventorymanagement.inventorymanagementspringboot.model.VegFr
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VegFruitRepository extends JpaRepository<VegFruit, Integer>{
+public interface VegFruitRepository extends JpaRepository<VegFruit, Long>{
     
 }

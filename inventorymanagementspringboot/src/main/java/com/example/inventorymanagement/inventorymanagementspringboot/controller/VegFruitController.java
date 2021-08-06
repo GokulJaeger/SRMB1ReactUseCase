@@ -1,95 +1,82 @@
 package com.example.inventorymanagement.inventorymanagementspringboot.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 // import org.springframework.data.domain.Page;  
 // import org.springframework.data.domain.Pageable;  
-import org.springframework.http.ResponseEntity;  
-import org.springframework.web.bind.annotation.*;  
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
-import com.example.inventorymanagement.inventorymanagementspringboot.model.OrderDetails;
+import com.example.inventorymanagement.inventorymanagementspringboot.exception.ResourceNotFoundException;
 import com.example.inventorymanagement.inventorymanagementspringboot.model.VegFruit;
-import com.example.inventorymanagement.inventorymanagementspringboot.repository.OrderDetailsRepository;
 import com.example.inventorymanagement.inventorymanagementspringboot.repository.VegFruitRepository;
-
-import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
-@RequestMapping("/api/vegfruit")
-public class VegFruitController {  
-    private final VegFruitRepository vegfruitrepo;
-    private final OrderDetailsRepository orderdetailrepo;
+@RequestMapping("/api")
+public class VegFruitController {
+
+    private Logger log = LoggerFactory.getLogger(VegFruitController.class);
 
     @Autowired
-    public VegFruitController(VegFruitRepository vegfruitrepo, OrderDetailsRepository orderdetailrepo) {
-        this.vegfruitrepo = vegfruitrepo;
-        this.orderdetailrepo = orderdetailrepo;
+    private VegFruitRepository vegfruitrepo;
+
+    @GetMapping("/wvegfruit")
+    public List<VegFruit> getAllVegFruits() {
+        log.info("VegFruit Data's fetched: ");
+        return vegfruitrepo.findAll();
     }
 
-    @PostMapping("/vegfruit")
-    public ResponseEntity<VegFruit> create(@RequestBody @Valid VegFruit vegfruit) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit.getOrderdetails().getId());
-        if (!optionalOrderdetails.isPresent()) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        vegfruit.setOrderdetails(optionalOrderdetails.get());
-
-        VegFruit savedvegfruit = vegfruitrepo.save(vegfruit);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-            .buildAndExpand(savedvegfruit.getId()).toUri();
-
-        return ResponseEntity.created(location).body(savedvegfruit);
+    @GetMapping("/wvegfruit/{id}")
+    public ResponseEntity<VegFruit> getVegFruitById(@Valid @PathVariable(value = "id") Long vfLong)
+            throws ResourceNotFoundException {
+        VegFruit vf1 = vegfruitrepo.findById(vfLong)
+                .orElseThrow(() -> new ResourceNotFoundException("VegFruit not found for this id :: " + vfLong));
+        log.info("VegFruit Data's fetched: ");
+        return ResponseEntity.ok().body(vf1);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<VegFruit> update(@RequestBody @Valid VegFruit vegfruit2, @PathVariable Integer id) {
-        Optional<OrderDetails> optionalOrderdetails = orderdetailrepo.findById(vegfruit2.getOrderdetails().getId());
-        if (!optionalOrderdetails.isPresent()) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        Optional<VegFruit> optionalBook = vegfruitrepo.findById(id);
-        if (!optionalBook.isPresent()) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        vegfruit2.setOrderdetails(optionalOrderdetails.get());
-        vegfruit2.setId(optionalBook.get().getId());
-        vegfruitrepo.save(vegfruit2);
-
-        return ResponseEntity.noContent().build();
+    @PostMapping("/wvegfruit")
+    public VegFruit createVegFruit(@Valid @RequestBody VegFruit vf2) throws ResourceNotFoundException {
+        log.info("VegFruit Inserted!...");
+        return vegfruitrepo.save(vf2);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<VegFruit> delete(@PathVariable Integer id) {
-        Optional<VegFruit> optionalVegfruit = vegfruitrepo.findById(id);
-        if (!optionalVegfruit.isPresent()) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
+    @PutMapping("/wvegfruit/{id}")
+    public ResponseEntity<VegFruit> updateVegFruit(@Valid @PathVariable(value = "id") Long vfLong,
+            @Valid @RequestBody VegFruit vf3) throws ResourceNotFoundException {
+        VegFruit vf4 = vegfruitrepo.findById(vfLong)
+                .orElseThrow(() -> new ResourceNotFoundException("VegFruit cannot be found for this id :: " + vfLong));
 
-        vegfruitrepo.delete(optionalVegfruit.get());
-
-        return ResponseEntity.noContent().build();
+                vf4.setPcatg(vf3.getPcatg());
+                vf4.setPcode(vf3.getPcode());
+                vf4.setPdesc(vf3.getPdesc());
+                vf4.setPname(vf3.getPname());
+                vf4.setPprice(vf3.getPprice());
+                vf4.setPqty(vf3.getPqty());
+                vf4.setStockin(vf3.getStockin());
+                vf4.setStockout(vf3.getStockout());
+                vf4.setVfordercode(vf3.getVfordercode());
+        final VegFruit updatedVegfruit = vegfruitrepo.save(vf4);
+        log.info("VegFruit Updated!...");
+        return ResponseEntity.ok(updatedVegfruit);
     }
 
-    @GetMapping
-    public ResponseEntity<List<VegFruit>> getAll(VegFruit vegfruit3) {
-        return ResponseEntity.ok(vegfruitrepo.findAll());
-    }
+    @DeleteMapping("/wvegfruit/{id}")
+    public Map<String, Boolean> deleteVegFruit(@Valid @PathVariable(value = "id") Long vfLong)
+            throws ResourceNotFoundException {
+        VegFruit vf3 = vegfruitrepo.findById(vfLong)
+                .orElseThrow(() -> new ResourceNotFoundException("VegFruit not found for this id :: " + vfLong));
 
-    @GetMapping("/{id}")
-    public ResponseEntity<VegFruit> getById(@PathVariable Integer id) {
-        Optional<VegFruit> optionalVegfruit = vegfruitrepo.findById(id);
-        if (!optionalVegfruit.isPresent()) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        return ResponseEntity.ok(optionalVegfruit.get());
+        vegfruitrepo.delete(vf3);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("VegFruit deleted", Boolean.TRUE);
+        log.info("VegFruit Deleted!....");
+        return response;
     }
 }
-

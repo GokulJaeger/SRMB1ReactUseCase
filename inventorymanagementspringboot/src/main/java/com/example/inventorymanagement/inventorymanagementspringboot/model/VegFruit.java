@@ -4,17 +4,17 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 
 @Entity
 @Table(name="vegfruit")
@@ -22,7 +22,7 @@ public class VegFruit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String pcode;
 
@@ -36,24 +36,54 @@ public class VegFruit {
 
     private double pprice;
 
-    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date stockin;
 
-    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date stockout;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ordercode")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private OrderDetails orderdetails;
+    // @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    // @JoinColumn(name = "ordercode")
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    // private OrderDetails orderdetails;
 
-    public int getId() {
+    private String vfordercode;
+
+    public VegFruit() {
+    }
+
+
+    public VegFruit(long id, String pcode, String pname, String pdesc, String pcatg, double pqty, double pprice,
+            Date stockin, Date stockout, String vfordercode) {
+        this.id = id;
+        this.pcode = pcode;
+        this.pname = pname;
+        this.pdesc = pdesc;
+        this.pcatg = pcatg;
+        this.pqty = pqty;
+        this.pprice = pprice;
+        this.stockin = stockin;
+        this.stockout = stockout;
+        this.vfordercode = vfordercode;
+    }
+
+    public String getVfordercode() {
+        return vfordercode;
+    }
+
+    public void setVfordercode(String vfordercode) {
+        this.vfordercode = vfordercode;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -119,15 +149,5 @@ public class VegFruit {
 
     public void setStockout(Date stockout) {
         this.stockout = stockout;
-    }
-
-    public OrderDetails getOrderdetails() {
-        return orderdetails;
-    }
-
-    public void setOrderdetails(OrderDetails orderdetails) {
-        this.orderdetails = orderdetails;
-    }
-
-    
+    }    
 }

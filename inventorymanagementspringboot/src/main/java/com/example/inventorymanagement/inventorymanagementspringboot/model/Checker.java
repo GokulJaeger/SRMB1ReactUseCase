@@ -11,9 +11,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "admin")
-public class Admin {
-
+@Table(name = "checker")
+public class Checker {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -115,10 +114,10 @@ public class Admin {
         this.role = role;
     }
 
-    public Admin() {
+    public Checker() {
     }
 
-    public Admin(long id,
+    public Checker(long id,
             @NotNull(message = "Should not be NULL") @NotBlank(message = "Should not be BLANK") @NotEmpty(message = "Should not be EMPTY") @Size(min = 5, message = "username should have 5 characters") String username,
             @NotNull(message = "Should not be NULL") @NotBlank(message = "Should not be BLANK") @NotEmpty(message = "Should not be EMPTY") @Size(min = 5, message = "password should have 5 characters") String password,
             @NotNull(message = "Should not be NULL") @NotBlank(message = "Should not be BLANK") @NotEmpty(message = "Should not be EMPTY") @Size(min = 5, message = "password should have 5 characters") String role,
@@ -133,7 +132,4 @@ public class Admin {
         this.phone = phone;
         this.aadhar = aadhar;
     }
-
-    
-    
 }

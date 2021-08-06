@@ -1,0 +1,112 @@
+{
+    "ordercode": "ORDG7120001",
+    "productcode": "PPC7120001",
+    "productname": "Lakme",
+    "orderprice": "157",
+    "orderqty": "200",
+    "ordercatg":"Personal Care",
+    "suppliername": "Dhina",
+    "supplierphone": "8665634512",
+    "supplieremail": "dhina@walmart.com",
+    "supplieraddress": "Anna Nagar, Chennai",
+    "orderdate": "2021-07-08",
+    "deliverydate": "2021-08-01"
+}
+{
+    "ordercode": "ORDG7120001",
+    "productcode": "PPC7120005",
+    "productname": "indulekha",
+    "orderprice": "210",
+    "orderqty": "50",
+    "ordercatg":"Personal Care",
+    "suppliername": "Dhina",
+    "supplierphone": "8665634512",
+    "supplieremail": "dhina@walmart.com",
+    "supplieraddress": "Anna Nagar, Chennai",
+    "orderdate": "2021-07-08",
+    "deliverydate": "2021-08-01"
+}
+{
+    "ordercode": "ORDG7120002",
+    "productcode": "PRP7120001",
+    "productname": "Tata Sampann",
+    "orderprice": "28.71",
+    "orderqty": "2000",
+    "ordercatg":"Rice Product",
+    "suppliername": "Babu",
+    "supplierphone": "9003634512",
+    "supplieremail": "babu@gromart.com",
+    "supplieraddress": "Ramapuram, Chennai",
+    "orderdate": "2021-07-24",
+    "deliverydate": "2021-08-19"
+}
+{
+    "ordercode": "ORDG7120002",
+    "productcode": "PRP7120004",
+    "productname": "Delight Foods",
+    "orderprice": "127.50",
+    "orderqty": "1000",
+    "ordercatg":"Rice Product",
+    "suppliername": "Babu",
+    "supplierphone": "9003634512",
+    "supplieremail": "babu@gromart.com",
+    "supplieraddress": "Ramapuram, Chennai",
+    "orderdate": "2021-07-24",
+    "deliverydate": "2021-08-19"
+}
+{
+    "ordercode": "ORDG7120003",
+    "productcode": "PDP7120001",
+    "productname": "BB Royal",
+    "orderprice": "598",
+    "orderqty": "500",
+    "ordercatg":"Dals and Pulses",
+    "suppliername": "Pavan",
+    "supplierphone": "94579635102",
+    "supplieremail": "pavan@dhalmart.com",
+    "supplieraddress": "Purai, Punjab",
+    "orderdate": "2021-06-13",
+    "deliverydate": "2021-08-12"
+}
+{
+    "ordercode": "ORDG7120003",
+    "productcode": "PDP7120005",
+    "productname": "BB Royal",
+    "orderprice": "275",
+    "orderqty": "500",
+    "ordercatg":"Dals and Pulses",
+    "suppliername": "Pavan",
+    "supplierphone": "94579635102",
+    "supplieremail": "pavan@dhalmart.com",
+    "supplieraddress": "Purai, Punjab",
+    "orderdate": "2021-06-13",
+    "deliverydate": "2021-08-12"
+}
+{
+    "ordercode": "ORDG7120004",
+    "productcode": "PCT7120003",
+    "productname": "Bru",
+    "orderprice": "269",
+    "orderqty": "500",
+    "ordercatg":"Coffee and Tea",
+    "suppliername": "Girish",
+    "supplierphone": "8549635102",
+    "supplieremail": "grish@teamart.com",
+    "supplieraddress": "Kochi, Kerala",
+    "orderdate": "2021-06-25",
+    "deliverydate": "2021-07-29"
+}
+{
+    "ordercode": "ORDG7120004",
+    "productcode": "PCT7120005",
+    "productname": "Tata Tea",
+    "orderprice": "399",
+    "orderqty": "500",
+    "ordercatg":"Coffee and Tea",
+    "suppliername": "Girish",
+    "supplierphone": "8549635102",
+    "supplieremail": "grish@teamart.com",
+    "supplieraddress": "Kochi, Kerala",
+    "orderdate": "2021-06-25",
+    "deliverydate": "2021-07-29"
+}

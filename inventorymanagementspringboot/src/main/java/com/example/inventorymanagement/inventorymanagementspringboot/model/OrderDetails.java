@@ -1,33 +1,29 @@
 package com.example.inventorymanagement.inventorymanagementspringboot.model;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "orderdetails")
 public class OrderDetails {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    private UUID id;
+    private long id;
 
-    private int ordercode;
+    private String ordercode;
 
     private String productcode;
 
@@ -47,22 +43,21 @@ public class OrderDetails {
 
     private String supplieraddress;
 
-    @Column(updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date orderdate;
 
-    @Column(updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date deliverydate;
 
-    @OneToMany(mappedBy = "orderdetails", cascade = CascadeType.ALL)
-    private Set<VegFruit> vegfruit = new HashSet<>();
-
-    public int getOrdercode() {
+    public String getOrdercode() {
         return ordercode;
     }
 
-    public void setOrdercode(int ordercode) {
+    public void setOrdercode(String ordercode) {
         this.ordercode = ordercode;
     }
 
@@ -154,19 +149,11 @@ public class OrderDetails {
         this.deliverydate = deliverydate;
     }
 
-    public Set<VegFruit> getVegfruit() {
-        return vegfruit;
-    }
-
-    public void setVegfruit(Set<VegFruit> vegfruit) {
-        this.vegfruit = vegfruit;
-    }
-
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 

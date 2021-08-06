@@ -3,7 +3,7 @@ import com.example.inventorymanagement.inventorymanagementspringboot.model.Groce
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface GroceryRepository extends JpaRepository<Grocery, Integer> {
+public interface GroceryRepository extends JpaRepository<Grocery, Long> {
 
     
 }

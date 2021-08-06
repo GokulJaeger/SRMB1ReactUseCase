@@ -1,7 +1,6 @@
 package com.example.inventorymanagement.inventorymanagementspringboot.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 
 import java.util.Date;
 
@@ -9,13 +8,14 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 
 @Entity
 @Table(name = "grocery")
@@ -23,7 +23,7 @@ public class Grocery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String pcode;
 
@@ -37,24 +37,59 @@ public class Grocery {
 
     private double pprice;
 
-    @Column(updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date manuDate;
 
-    @Column(updatable = false)
+    @CreationTimestamp
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date expDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ordercode")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private OrderDetails orderdetails;
+    // @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    // @JoinColumn(name = "ordercode")
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    // private OrderDetails orderdetails;
 
-    public int getId() {
+    private String gordercode;
+
+    
+
+    public Grocery() {
+    }
+    
+
+    public Grocery(int id, String pcode, String pname, String pdesc, String pcatg, double pqty, double pprice,
+            Date manuDate, Date expDate, String gordercode) {
+        this.id = id;
+        this.pcode = pcode;
+        this.pname = pname;
+        this.pdesc = pdesc;
+        this.pcatg = pcatg;
+        this.pqty = pqty;
+        this.pprice = pprice;
+        this.manuDate = manuDate;
+        this.expDate = expDate;
+        this.gordercode = gordercode;
+    }
+
+
+    public String getGordercode() {
+        return gordercode;
+    }
+
+
+    public void setGordercode(String gordercode) {
+        this.gordercode = gordercode;
+    }
+
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -120,16 +155,6 @@ public class Grocery {
 
     public void setExpDate(Date expDate) {
         this.expDate = expDate;
-    }
-
-    public OrderDetails getOrderdetails() {
-        return orderdetails;
-    }
-
-    public void setOrderdetails(OrderDetails orderdetails) {
-        this.orderdetails = orderdetails;
-    }
-
-    
+    }    
     
 }

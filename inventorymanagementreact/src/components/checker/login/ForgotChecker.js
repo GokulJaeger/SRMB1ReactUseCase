@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import AdminLoginError from './AdminLoginError';
+import CheckerLoginError from './CheckerLoginError';
 
-export default function ForgotCredentials() {
+export default function ForgotChecker() {
 
     const initVal = {
         phone: "",
@@ -17,7 +17,7 @@ export default function ForgotCredentials() {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/admin").then((x) => {
+        axios.get("http://localhost:8080/api/checker").then((x) => {
             console.warn("api data", x);
             setApiValues(x.data);
         });
@@ -74,7 +74,7 @@ export default function ForgotCredentials() {
 
 
     const handleLoginPage=()=>{
-        history.push('/admin');
+        history.push('/checkerlogin');
     }
     return (
         <div className="login">
@@ -93,7 +93,7 @@ export default function ForgotCredentials() {
                             id="phone"
                             onChange={handleChanges}
                         />
-                        <AdminLoginError msg={forgotError.phone} />
+                        <CheckerLoginError msg={forgotError.phone} />
                     </div>
                     <div>
                         <label>
@@ -106,7 +106,7 @@ export default function ForgotCredentials() {
                             id="aadhar"
                             onChange={handleChanges}
                         />
-                        <AdminLoginError msg={forgotError.aadhar} />
+                        <CheckerLoginError msg={forgotError.aadhar} />
                     </div>
                     <div>
                         <button type="submit">
@@ -116,7 +116,7 @@ export default function ForgotCredentials() {
                             Login
                         </button>
                     </div>
-                    {submit && (<p>Your credentials: Username:{apiValues[0].user} and Passowrd: {apiValues[0].password}</p>)}
+                    {submit && (<p>Your credentials: Username:{apiValues[0].username} and Passowrd: {apiValues[0].password}</p>)}
                 </form>
             </div>
         </div>

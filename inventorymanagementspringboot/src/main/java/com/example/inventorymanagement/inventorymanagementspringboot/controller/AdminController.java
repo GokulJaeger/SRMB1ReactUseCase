@@ -3,13 +3,10 @@ package com.example.inventorymanagement.inventorymanagementspringboot.controller
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.validation.Valid;
-
 import com.example.inventorymanagement.inventorymanagementspringboot.exception.ResourceNotFoundException;
 import com.example.inventorymanagement.inventorymanagementspringboot.model.Admin;
 import com.example.inventorymanagement.inventorymanagementspringboot.repository.AdminRepository;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,50 +34,52 @@ public class AdminController {
 
     @GetMapping("/admin")
     public List<Admin> getAllAdmins() {
+        log.info("Admin Data's fetched: ");
         return adminrepo.findAll();
     }
 
     @GetMapping("/admin/{id}")
-    public ResponseEntity<Admin> getAdminById(@PathVariable(value = "id") Long adminLong)
+    public ResponseEntity<Admin> getAdminById(@Valid @PathVariable(value = "id") Long adminLong)
             throws ResourceNotFoundException {
                 Admin admin1 = adminrepo.findById(adminLong)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + adminLong));
-        log.info("Data's fetched: ", admin1.toString());
+                .orElseThrow(() -> new ResourceNotFoundException("Admin not found for this id :: " + adminLong));
+        log.info("Admin Data's fetched: ");
         return ResponseEntity.ok().body(admin1);
     }
 
     @PostMapping("/admin")
     public Admin createAdmin(@Valid @RequestBody Admin admin2) throws ResourceNotFoundException {
-        log.info("Inserted!...");
+        log.info("Admin Inserted!...");
         return adminrepo.save(admin2);
     }
 
     @PutMapping("/admin/{id}")
-    public ResponseEntity<Admin> updateAdmin(@PathVariable(value = "id") Long adminLong,
+    public ResponseEntity<Admin> updateAdmin(@Valid @PathVariable(value = "id") Long adminLong,
             @Valid @RequestBody Admin adminDetails) throws ResourceNotFoundException {
                 Admin admin = adminrepo.findById(adminLong)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee cannot be found for this id :: " + adminLong));
+                .orElseThrow(() -> new ResourceNotFoundException("Admin cannot be found for this id :: " + adminLong));
 
                 admin.setUsername(adminDetails.getUsername());
                 admin.setPassword(adminDetails.getPassword());
                 admin.setHint(adminDetails.getHint());
                 admin.setPhone(adminDetails.getPhone());
                 admin.setAadhar(adminDetails.getAadhar());
+                admin.setRole(adminDetails.getRole());
         final Admin updatedAdmin = adminrepo.save(admin);
-        log.info("Updated!...");
+        log.info("Admin Updated!...");
         return ResponseEntity.ok(updatedAdmin);
     }
 
     @DeleteMapping("/admin/{id}")
-    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long adminLong)
+    public Map<String, Boolean> deleteAdmin(@Valid @PathVariable(value = "id") Long adminLong)
             throws ResourceNotFoundException {
                 Admin admin = adminrepo.findById(adminLong)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + adminLong));
+                .orElseThrow(() -> new ResourceNotFoundException("Admin not found for this id :: " + adminLong));
 
                 adminrepo.delete(admin);
         Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        log.info("Deleted!....");
+        response.put("Admin Deleted", Boolean.TRUE);
+        log.info("Admin Deleted!....");
         return response;
     }
 }

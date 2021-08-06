@@ -1,0 +1,455 @@
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120001",
+"pdesc":"Ooty Apples",
+"pname":"Apple",
+"pprice":"300",
+"pqty":"50",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120001"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120002",
+"pdesc":" Alphonsos Mangoes",
+"pname":"Mangoes",
+"pprice":"90",
+"pqty":"2",
+"stockin":"2021-08-06",
+"stockout":"2021-08-11",
+"vfordercode": "ORDVF7120001"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120003",
+"pdesc":"Red Banana",
+"pname":"Banana",
+"pprice":"100",
+"pqty":"90",
+"stockin":"2021-04-05",
+"stockout":"2021-04-10",
+"vfordercode": "ORDVF7120001"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120003",
+"pdesc":"Blue Java Banana",
+"pname":"Banana",
+"pprice":"150",
+"pqty":"50",
+"stockin":"2021-05-06",
+"stockout":"2021-05-12",
+"vfordercode": "ORDVF7120002"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120001",
+"pdesc":"Red Apples",
+"pname":"Apple",
+"pprice":"310",
+"pqty":"150",
+"stockin":"2021-07-06",
+"stockout":"2021-07-12",
+"vfordercode": "ORDVF7120002"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120003",
+"pdesc":"Manzano Bananas",
+"pname":"Banana",
+"pprice":"220",
+"pqty":"100",
+"stockin":"2021-06-06",
+"stockout":"2021-06-12",
+"vfordercode": "ORDVF7120002"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120004",
+"pdesc":"Dholka",
+"pname":"Pomegranate",
+"pprice":"150",
+"pqty":"50",
+"stockin":"2021-01-06",
+"stockout":"2021-02-12",
+"vfordercode": "ORDVF7120003"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120004",
+"pdesc":"Arakta",
+"pname":"Pomegranate",
+"pprice":"296",
+"pqty":"299",
+"stockin":"2021-05-06",
+"stockout":"2021-06-12",
+"vfordercode": "ORDVF7120003"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120004",
+"pdesc":"Ruby",
+"pname":"Pomegranate",
+"pprice":"120",
+"pqty":"90",
+"stockin":"2021-03-06",
+"stockout":"2021-04-12",
+"vfordercode": "ORDVF7120003"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120006",
+"pdesc":"Banglore Blue",
+"pname":"Grapes",
+"pprice":"650",
+"pqty":"110",
+"stockin":"2021-10-06",
+"stockout":"2021-10-12",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120006",
+"pdesc":"Gulab",
+"pname":"Grapes",
+"pprice":"190",
+"pqty":"80",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120006",
+"pdesc":"Arkavati",
+"pname":"Grapes",
+"pprice":"250",
+"pqty":"150",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120005",
+"pdesc":"Black Gold",
+"pname":"JackFruit",
+"pprice":"90",
+"pqty":"200",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120005",
+"pdesc":"Golden Nugget",
+"pname":"JackFruit",
+"pprice":"350",
+"pqty":"90",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Fruit",
+"pcode":"PVF7120005",
+"pdesc":"Honey Gol",
+"pname":"JackFruit",
+"pprice":"250",
+"pqty":"80",
+"stockin":"2021-06-03",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120005"
+}
+
+
+====================================================================================================================================
+
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120006",
+"pdesc":"cherry",
+"pname":"Tomatoes",
+"pprice":"150",
+"pqty":"50",
+"stockin":"2021-01-06",
+"stockout":"2021-01-12",
+"vfordercode": "ORDVF7120001"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120006",
+"pdesc":"heirloom",
+"pname":"Tomatoes",
+"pprice":"190",
+"pqty":"60",
+"stockin":"2021-02-12",
+"stockout":"2021-02-19",
+"vfordercode": "ORDVF7120001"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120006",
+"pdesc":"pear",
+"pname":"Tomatoes",
+"pprice":"120",
+"pqty":"90",
+"stockin":"2021-03-07",
+"stockout":"2021-03-14",
+"vfordercode": "ORDVF7120001"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120007",
+"pdesc":"Agrifound White",
+"pname":"Onion",
+"pprice":"250",
+"pqty":"50",
+"stockin":"2021-04-23",
+"stockout":"2021-05-01",
+"vfordercode": "ORDVF7120002"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120007",
+"pdesc":"Agrifound Rose",
+"pname":"Onion",
+"pprice":"200",
+"pqty":"90",
+"stockin":"2021-10-14",
+"stockout":"2021-10-25",
+"vfordercode": "ORDVF7120002"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120007",
+"pdesc":"Agrifound Dark Red",
+"pname":"Onion",
+"pprice":"300",
+"pqty":"100",
+"stockin":"2021-06-17",
+"stockout":"2021-06-22",
+"vfordercode": "ORDVF7120002"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120007",
+"pdesc":"Agrifound Light Red",
+"pname":"Onion",
+"pprice":"50",
+"pqty":"200",
+"stockin":"2021-04-15",
+"stockout":"2021-04-25",
+"vfordercode": "ORDVF7120002"
+}
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120008",
+"pdesc":"Kamini",
+"pname":"Ladies Finger",
+"pprice":"200",
+"pqty":"50",
+"stockin":"2021-02-02",
+"stockout":"2021-02-19",
+"vfordercode": "ORDVF7120003"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120008",
+"pdesc":"Mukhamali",
+"pname":"Ladies Finger",
+"pprice":"320",
+"pqty":"100",
+"stockin":"2021-09-13",
+"stockout":"2021-10-14",
+"vfordercode": "ORDVF7120003"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120008",
+"pdesc":"Parbhani Kranti",
+"pname":"Ladies Finger",
+"pprice":"45",
+"pqty":"142",
+"stockin":"2021-05-01",
+"stockout":"2021-05-10",
+"vfordercode": "ORDVF7120003"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120009",
+"pdesc":"Kufri Jyoti",
+"pname":"Potatoes",
+"pprice":"55",
+"pqty":"700",
+"stockin":"2021-12-16",
+"stockout":"2021-12-27",
+"vfordercode": "ORDVF7120003"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120009",
+"pdesc":"Kufri Lalim",
+"pname":"Potatoes",
+"pprice":"120",
+"pqty":"650",
+"stockin":"2021-03-26",
+"stockout":"2021-04-02",
+"vfordercode": "ORDVF7120003"
+}
+
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120009",
+"pdesc":"Kufri Red",
+"pname":"Potatoes",
+"pprice":"150",
+"pqty":"580",
+"stockin":"2021-01-06",
+"stockout":"2021-02-01",
+"vfordercode": "ORDVF7120004"
+}
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120009",
+"pdesc":"Kufri Kundan",
+"pname":"Potatoes",
+"pprice":"60",
+"pqty":"70",
+"stockin":"2021-05-15",
+"stockout":"2021-06-02",
+"vfordercode": "ORDVF7120003"
+}
+
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120009",
+"pdesc":"Kufri Swarna",
+"pname":"Potatoes",
+"pprice":"220",
+"pqty":"56",
+"stockin":"2021-09-06",
+"stockout":"2021-09-14",
+"vfordercode": "ORDVF7120003"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120010",
+"pdesc":"Purple Round",
+"pname":"Brinjal",
+"pprice":"20",
+"pqty":"333",
+"stockin":"2021-08-06",
+"stockout":"2021-08-20",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120010",
+"pdesc":"Purple Cluster",
+"pname":"Brinjal",
+"pprice":"90",
+"pqty":"253",
+"stockin":"2021-01-16",
+"stockout":"2021-01-29",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120010",
+"pdesc":"Azad Kranti",
+"pname":"Brinjal",
+"pprice":"192",
+"pqty":"62",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120010",
+"pdesc":"Arka Nidh",
+"pname":"Brinjal",
+"pprice":"30",
+"pqty":"450",
+"stockin":"2021-08-06",
+"stockout":"2021-08-12",
+"vfordercode": "ORDVF7120004"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120011",
+"pdesc":"Yardlong Bea",
+"pname":"Beans",
+"pprice":"40",
+"pqty":"670",
+"stockin":"2021-05-16",
+"stockout":"2021-05-22",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120011",
+"pdesc":"Soya Beans",
+"pname":"Beans",
+"pprice":"300",
+"pqty":"950",
+"stockin":"2021-08-06",
+"stockout":"2021-09-12",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120011",
+"pdesc":"Chickpea Beans",
+"pname":"Beans",
+"pprice":"60",
+"pqty":"1150",
+"stockin":"2021-06-17",
+"stockout":"2021-06-28",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120011",
+"pdesc":" Fava Beans",
+"pname":"Beans",
+"pprice":"82",
+"pqty":"3250",
+"stockin":"2021-04-06",
+"stockout":"2021-05-12",
+"vfordercode": "ORDVF7120005"
+}
+{
+"pcatg":"Vegetables",
+"pcode":"PVF7120011",
+"pdesc":"French Beans",
+"pname":"Beans",
+"pprice":"39",
+"pqty":"258",
+"stockin":"2021-01-13",
+"stockout":"2021-02-23",
+"vfordercode": "ORDVF7120005"
+}
+====================================================================================================================================

@@ -4,83 +4,84 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;    
 import org.springframework.http.ResponseEntity;  
-import org.springframework.web.bind.annotation.*;  
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
+import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
-
+import com.example.inventorymanagement.inventorymanagementspringboot.exception.ResourceNotFoundException;
 import com.example.inventorymanagement.inventorymanagementspringboot.model.OrderDetails;
 import com.example.inventorymanagement.inventorymanagementspringboot.repository.OrderDetailsRepository;
-import com.example.inventorymanagement.inventorymanagementspringboot.repository.VegFruitRepository;
-
-import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.Map;
 
 
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
-@RequestMapping("/api/orderdetails")
+@RequestMapping("/api")
 public class OrderDetailController {  
-    private final VegFruitRepository vegfruitrepo;
-    private final OrderDetailsRepository orderdetailrepo;
-    private Logger logg = LoggerFactory.getLogger(OrderDetailController.class);
+
+
+ 
+    private Logger log = LoggerFactory.getLogger(OrderDetailController.class);
 
     @Autowired
-    public OrderDetailController(VegFruitRepository vegfruitrepo, OrderDetailsRepository orderdetailrepo) {
-        this.orderdetailrepo = orderdetailrepo;
-        this.vegfruitrepo = vegfruitrepo;
+    private OrderDetailsRepository orderdetailrepo;
+
+    @GetMapping("/worderdetails")
+    public List<OrderDetails> getAllOrderDetails() {
+        log.info("Order Details Data's fetched: ");
+        return orderdetailrepo.findAll();
     }
 
-    @PostMapping("/orderdetails")
-    public ResponseEntity<OrderDetails> create(@Valid @RequestBody OrderDetails orderdetail1) {
-        OrderDetails savedorderdetail = orderdetailrepo.save(orderdetail1);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-            .buildAndExpand(savedorderdetail.getOrdercode()).toUri();
-        logg.info("Created!....");
-        return ResponseEntity.created(location).body(savedorderdetail);
-    }
-    @PutMapping("/{id}")
-    public ResponseEntity<OrderDetails> update(@PathVariable UUID id, @Valid @RequestBody OrderDetails orderdetail2) {
-        Optional<OrderDetails> optionalOrderDetail = orderdetailrepo.findById(id);
-        if (!optionalOrderDetail.isPresent()) {
-            logg.info("Updated Failed!....");
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        orderdetail2.setOrdercode(optionalOrderDetail.get().getOrdercode());
-        orderdetailrepo.save(orderdetail2);
-        logg.info("Updated!....");
-        return ResponseEntity.noContent().build();
+    @GetMapping("/worderdetails/{id}")
+    public ResponseEntity<OrderDetails> getOrderDetailsById(@Valid @PathVariable(value = "id") Long orderLong)
+            throws ResourceNotFoundException {
+                OrderDetails order1 = orderdetailrepo.findById(orderLong)
+                .orElseThrow(() -> new ResourceNotFoundException("Order Details not found for this id :: " + orderLong));
+        log.info("Order Details Data's fetched: ");
+        return ResponseEntity.ok().body(order1);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<OrderDetails> delete(@PathVariable UUID id) {
-        Optional<OrderDetails> optionalOderDetails = orderdetailrepo.findById(id);
-        if (!optionalOderDetails.isPresent()) {
-            logg.info("Deletion Failed!....");
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        orderdetailrepo.delete(optionalOderDetails.get());
-        logg.info("Deleted!....");
-        return ResponseEntity.noContent().build();
+    @PostMapping("/worderdetails")
+    public OrderDetails createOrderDetails(@Valid @RequestBody OrderDetails order2) throws ResourceNotFoundException {
+        log.info("Order Details Inserted!...");
+        return orderdetailrepo.save(order2);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<OrderDetails> getById(@PathVariable UUID id) {
-        Optional<OrderDetails> optionalOrderDetails = orderdetailrepo.findById(id);
-        if (!optionalOrderDetails.isPresent()) {
-            logg.info("Fetch Failed!....");
-            return ResponseEntity.unprocessableEntity().build();
-        }
-        logg.info("Fetched!....");
-        return ResponseEntity.ok(optionalOrderDetails.get());
+    @PutMapping("/worderdetails/{id}")
+    public ResponseEntity<OrderDetails> updateOrderDetails(@Valid @PathVariable(value = "id") Long orderLong,
+            @Valid @RequestBody OrderDetails order3) throws ResourceNotFoundException {
+                OrderDetails order4 = orderdetailrepo.findById(orderLong)
+                .orElseThrow(() -> new ResourceNotFoundException("Order Details cannot be found for this id :: " + orderLong));
+
+                order4.setDeliverydate(order3.getDeliverydate());
+                order4.setOrdercatg(order3.getOrdercatg());
+                order4.setOrdercode(order3.getOrdercode());
+                order4.setOrderdate(order3.getOrderdate());
+                order4.setOrderprice(order3.getOrderprice());
+                order4.setOrderqty(order3.getOrderqty());
+                order4.setProductcode(order3.getProductcode());
+                order4.setProductname(order3.getProductname());
+                order4.setSuppliername(order3.getSuppliername());
+                order4.setSupplieremail(order3.getSupplieremail());
+                order4.setSupplierphone(order3.getSupplierphone());
+                order4.setSupplieraddress(order3.getSupplieraddress());
+        final OrderDetails updatedOrder = orderdetailrepo.save(order4);
+        log.info("Order Details Updated!...");
+        return ResponseEntity.ok(updatedOrder);
     }
 
-    @GetMapping
-    public ResponseEntity<List<OrderDetails>> getAll(OrderDetails orderdetail3) {
-        logg.info("Fetched!....");
-        return ResponseEntity.ok(orderdetailrepo.findAll());
+    @DeleteMapping("/worderdetails/{id}")
+    public Map<String, Boolean> deleteOrderdetails(@Valid @PathVariable(value = "id") Long orderlong)
+            throws ResourceNotFoundException {
+                OrderDetails order3 = orderdetailrepo.findById(orderlong)
+                .orElseThrow(() -> new ResourceNotFoundException("Order Details not found for this id :: " + orderlong));
+
+                orderdetailrepo.delete(order3);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("Order Details Deleted", Boolean.TRUE);
+        log.info("Order Details Deleted!....");
+        return response;
     }
+
+    
 }

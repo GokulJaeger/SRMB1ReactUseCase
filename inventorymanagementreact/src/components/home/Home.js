@@ -1,18 +1,23 @@
 import React from 'react';
+import About from '../about/About';
 import './Home.css';
 
 
 export default function Home() {
     return (
         <div className="divbg">
-            {/* Card1 */}
+            <header>
+            <About/>
+            </header>
+            <div>
+                {/* Card1 */}
             <div className="blog1-card1 spring-fever">
                 <div className="title-content">
                     <h3>ADMIN</h3>
                     <div className="intro">Inspiration </div>
                 </div>
                 <div className="card-info">
-                    <a href="/admin">Enter<span className="licon icon-arr icon-black"></span></a>
+                    <a href="/adminlogin">Enter<span className="licon icon-arr icon-black"></span></a>
                 </div>
                 <div className="utility-info">
                 </div>
@@ -26,7 +31,7 @@ export default function Home() {
                     <div className="intro">Inspiration</div>
                 </div>
                 <div className="card-info">
-                    <a href="/management">Enter<span className="licon icon-arr icon-black"></span></a>
+                    <a href="/managerlogin">Enter<span className="licon icon-arr icon-black"></span></a>
                 </div>
                 <div className="utility-info">
                 </div>
@@ -40,12 +45,13 @@ export default function Home() {
                     <div className="intro">Inspiration</div>
                 </div>
                 <div className="card-info">
-                    <a href="/maintenance">Enter<span className="licon icon-arr icon-black"></span></a>
+                    <a href="/checkerlogin">Enter<span className="licon icon-arr icon-black"></span></a>
                 </div>
                 <div className="utility-info">
                 </div>
                 <div className="gradient-overlay"></div>
                 <div className="color-overlay"></div>
+            </div>
             </div>
         </div >
     )

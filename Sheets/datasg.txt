@@ -1,0 +1,340 @@
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120001",
+"pdesc":"Eyeconic Kajal-Deep Black",
+"pname":"Lakme",
+"pprice":"157",
+"pqty":"200",
+"manuDate":"2021-07-06",
+"expDate":"2021-10-12",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120002",
+"pdesc":"BHH880/10 Straightening Brush",
+"pname":"Philips",
+"pprice":"3140",
+"pqty":"150",
+"manuDate":"2021-06-10",
+"expDate":"2022-06-11",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120003",
+"pdesc":"Total Repair 5 Shampoo",
+"pname":"LOreal",
+"pprice":"114",
+"pqty":"50",
+"manuDate":"2021-05-25",
+"expDate":"2021-12-02",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120004",
+"pdesc":"Make-up Brush Set of 16",
+"pname":"ALLURE",
+"pprice":"2599",
+"pqty":"25",
+"manuDate":"2021-01-25",
+"expDate":"2022-12-25",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120005",
+"pdesc":"Bringha Hair Oil 50ml",
+"pname":"indulekha",
+"pprice":"210",
+"pqty":"50",
+"manuDate":"2021-03-12",
+"expDate":"2021-10-20",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120006",
+"pdesc":"Men Classic Black EDT 100ml",
+"pname":"JAGUAR",
+"pprice":"1914",
+"pqty":"20",
+"manuDate":"2021-01-05",
+"expDate":"2022-10-09",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120007",
+"pdesc":"Lipstick - Velvet Punch 920",
+"pname":"M.A.C",
+"pprice":"1850",
+"pqty":"100",
+"manuDate":"2021-04-23",
+"expDate":"2021-10-28",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120008",
+"pdesc":"Deep Restore Body Lotion",
+"pname":"Vaseline",
+"pprice":"279",
+"pqty":"50",
+"manuDate":"2021-02-21",
+"expDate":"2022-10-20",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120009",
+"pdesc":"Men Hair Styling Gel 100ml",
+"pname":"Set Wet",
+"pprice":"60",
+"pqty":"100",
+"manuDate":"2021-05-30",
+"expDate":"2022-07-12",
+"gordercode": "ORDG7120001"
+}
+{
+"pcatg":"Personal Care",
+"pcode":"PPC7120010",
+"pdesc":"Bio Kelp Protein Sustainable Shampoo 650ml",
+"pname":"Biotique",
+"pprice":"322",
+"pqty":"100",
+"manuDate":"2021-08-01",
+"expDate":"2022-07-01",
+"gordercode": "ORDG7120001"
+}
+
+===============================================================
+
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120001",
+"pdesc":"Thick Poha 500g",
+"pname":"Tata Sampann",
+"pprice":"28.71",
+"pqty":"2000",
+"manuDate":"2021-05-03",
+"expDate":"2021-12-14",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120002",
+"pdesc":"Basmati Rice/Basmati Akki - Dubar 1kg",
+"pname":"India Gate",
+"pprice":"95",
+"pqty":"1000",
+"manuDate":"2021-03-05",
+"expDate":"2022-09-04",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120003",
+"pdesc":"Basmati Rice/Basmati Akki - Rozana 5kg",
+"pname":"Fortune",
+"pprice":"329",
+"pqty":"1000",
+"manuDate":"2021-06-12",
+"expDate":"2022-07-01",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120004",
+"pdesc":"Palakkad Rose Matta Rice - Kerala Red Rice 1kg",
+"pname":"Delight Foods",
+"pprice":"127.50",
+"pqty":"1000",
+"manuDate":"2021-02-28",
+"expDate":"2022-03-21",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120005",
+"pdesc":"Broken Rice 1kg",
+"pname":"BB Royal",
+"pprice":"37",
+"pqty":"1000",
+"manuDate":"2021-01-03",
+"expDate":"2022-03-01",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120006",
+"pdesc":"Wheat - Whole 5kg",
+"pname":"BB Royal",
+"pprice":"229",
+"pqty":"1000",
+"manuDate":"2021-11-17",
+"expDate":"2022-12-29",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120007",
+"pdesc":"Rice - Ponni, Raw 25kg",
+"pname":"bb Popular",
+"pprice":"1105",
+"pqty":"500",
+"manuDate":"2021-05-15",
+"expDate":"2022-04-24",
+"gordercode": "ORDG7120002"
+}
+{
+"pcatg":"Rice Product",
+"pcode":"PRP7120007",
+"pdesc":"Tamil Ponni Boiled Rice 25kg",
+"pname":"BB Royal",
+"pprice":"1320",
+"pqty":"500",
+"manuDate":"2021-08-25",
+"expDate":"2022-10-05",
+"gordercode": "ORDG7120002"
+}
+
+============================================
+
+{
+"pcatg":"Dals and Pulses",
+"pcode":"PDP7120001",
+"pdesc":"Toor Dal/Togari Bele - Desi 5kg",
+"pname":"BB Royal",
+"pprice":"598",
+"pqty":"500",
+"manuDate":"2021-05-18",
+"expDate":"2022-01-14",
+"gordercode": "ORDG7120003"
+}
+{
+"pcatg":"Dals and Pulses",
+"pcode":"PDP7120002",
+"pdesc":"Moong Dal/Hesaru Bele 2kg",
+"pname":"bb Popular",
+"pprice":"182.18",
+"pqty":"500",
+"manuDate":"2021-08-12",
+"expDate":"2022-11-24",
+"gordercode": "ORDG7120003"
+}
+{
+"pcatg":"Dals and Pulses",
+"pcode":"PDP7120003",
+"pdesc":"Peanuts/Kadalekayi - Raw 1kg",
+"pname":"BB Royal",
+"pprice":"139",
+"pqty":"500",
+"manuDate":"2021-07-23",
+"expDate":"2022-06-29",
+"gordercode": "ORDG7120003"
+}
+{
+"pcatg":"Dals and Pulses",
+"pcode":"PDP7120004",
+"pdesc":"Organic - Raw Peanuts 2kg",
+"pname":"BB Royal",
+"pprice":"318",
+"pqty":"500",
+"manuDate":"2021-01-25",
+"expDate":"2022-08-10",
+"gordercode": "ORDG7120003"
+}
+{
+"pcatg":"Dals and Pulses",
+"pcode":"PDP7120005",
+"pdesc":"Moong Dal/Hesaru Bele 2kg",
+"pname":"BB Royal",
+"pprice":"275",
+"pqty":"500",
+"manuDate":"2021-03-30",
+"expDate":"2022-05-01",
+"gordercode": "ORDG7120003"
+}
+
+===========================================
+
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120001",
+"pdesc":"Filter Coffee - Green Label 500g",
+"pname":"Bru",
+"pprice":"128",
+"pqty":"500",
+"manuDate":"2021-06-25",
+"expDate":"2022-02-24",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120002",
+"pdesc":"Instant Coffee - Xtra 50g",
+"pname":"Continental",
+"pprice":"105",
+"pqty":"500",
+"manuDate":"2021-02-15",
+"expDate":"2022-08-19",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120003",
+"pdesc":"Instant Coffee 200g",
+"pname":"Bru",
+"pprice":"269",
+"pqty":"500",
+"manuDate":"2021-05-15",
+"expDate":"2022-06-16",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120004",
+"pdesc":"Dust Tea 250g",
+"pname":"3 Roses",
+"pprice":"166",
+"pqty":"500",
+"manuDate":"2021-01-25",
+"expDate":"2022-02-30",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120005",
+"pdesc":"Premium - The Countrys Tea 1kg",
+"pname":"Tata Tea",
+"pprice":"399",
+"pqty":"500",
+"manuDate":"2021-07-10",
+"expDate":"2022-09-28",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120006",
+"pdesc":"Tea 500g",
+"pname":"Taj Mahal",
+"pprice":"319",
+"pqty":"500",
+"manuDate":"2021-03-03",
+"expDate":"2022-09-15",
+"gordercode": "ORDG7120004"
+}
+{
+"pcatg":"Coffee and Tea",
+"pcode":"PCT7120007",
+"pdesc":"Tea 500g",
+"pname":"Tata Tea Kanan Devan",
+"pprice":"134",
+"pqty":"500",
+"manuDate":"2021-05-07",
+"expDate":"2022-09-08",
+"gordercode": "ORDG7120004"
+}
+

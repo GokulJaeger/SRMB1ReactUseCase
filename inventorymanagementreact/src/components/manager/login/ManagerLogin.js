@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import AdminLoginError from './AdminLoginError';
+import ManagerLoginError from './ManagerLoginError';
 import axios from 'axios';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap.js';
@@ -16,7 +16,7 @@ import axios from 'axios';
 //         .then(data => data.json())
 // }
 
-export default function AdminLogin() {
+export default function ManagerLogin() {
     const initVal = {
         username: "",
         password: ""
@@ -29,7 +29,7 @@ export default function AdminLogin() {
     const [apiValues, setApiValues] = useState({});
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/admin").then((x) => {
+        axios.get("http://localhost:8080/api/manager").then((x) => {
             console.warn("api data", x);
             setApiValues(x.data);
         });
@@ -81,7 +81,7 @@ export default function AdminLogin() {
 
     useEffect(()=>{
         if(submitted){
-            history.push('/admindashboard');
+            history.push('/managerdashboard');
         }
     },[submitted, history])
 
@@ -111,14 +111,14 @@ export default function AdminLogin() {
     };
 
     const handleForget = () => {
-        history.push('/forgotadmin');
+        history.push('/forgotmanager');
     }
     // console.warn(loginValues.username, loginValues.password);
 
     return (
         <div className="login">
             <div>
-                <h2>Admin Login</h2>
+                <h2>Manager Login</h2>
                 <h4>Enter the credentials for Dashboard</h4>
                 <form onSubmit={handleSubmission} noValidate>
                     <div>
@@ -132,7 +132,7 @@ export default function AdminLogin() {
                             id="username"
                             onChange={handleChanges}
                         />
-                        <AdminLoginError msg={loginError.username} />
+                        <ManagerLoginError msg={loginError.username} />
                     </div>
                     <div>
                         <label>
@@ -145,7 +145,7 @@ export default function AdminLogin() {
                             id="password"
                             onChange={handleChanges}
                         />
-                        <AdminLoginError msg={loginError.password} />
+                        <ManagerLoginError msg={loginError.password} />
                     </div>
                     <div>
                         <button type="submit">

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;  
 import org.springframework.web.bind.annotation.*; 
 import javax.validation.Valid;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.inventorymanagement.inventorymanagementspringboot.exception.ResourceNotFoundException;
 import com.example.inventorymanagement.inventorymanagementspringboot.model.Grocery;
 import com.example.inventorymanagement.inventorymanagementspringboot.repository.GroceryRepository;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class GroceryController {  

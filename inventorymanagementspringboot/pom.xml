@@ -74,13 +74,13 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<scope>annotationProcessor</scope>
 		</dependency>
-	
-   <dependency>
-     <groupId>javax</groupId>
-     <artifactId>javaee-api</artifactId>
-     <version>8.0.1</version>
-   </dependency>
- </dependencies>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0.1</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -89,9 +89,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		</build>
-</project>
-<!-- <plugin>
+	</build>
+</project><!-- <plugin>
 	<groupId>org.springframework.experimental</groupId>
 	<artifactId>spring-aot-maven-plugin</artifactId>
 	<version>${spring-native.version}</version>

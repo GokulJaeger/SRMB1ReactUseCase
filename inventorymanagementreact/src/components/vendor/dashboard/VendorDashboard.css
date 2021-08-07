@@ -4,20 +4,20 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
   } */
-  details {
+  .details {
     margin-left: 30px;
     margin-top:30px;
   }
-  hr{
+  .hr{
     border: 2px solid #555;
   }
-  summary {
+  .summary {
     writing-mode: vertical-lr;
     text-align: center;
     padding: 12px 10px;
     width: 23px;
     height: 17px;
-    background-color: #AFE1AF;
+    background-color: #ddafe1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: #555555;
@@ -26,42 +26,42 @@
     outline: none;
     transition: transform 200ms ease-in-out 0s;
   }
-  summary::before,
-  summary::after {
+  .summary::before,
+  .summary::after {
     position: static;
     top: 0;
     left: 0;
   }
-  summary::before {
+  .summary::before {
     content: "";
   }
-  summary::after {
+  .summary::after {
     content: "III";
     letter-spacing: -1px;
   }
-  summary:hover {
+  .summary:hover {
     transform: scale(1.1);
   }
-  summary::marker {
+  .summary::marker {
     font-size: 0;
   }
-  summary::-webkit-details-marker {
+  .summary::-webkit-details-marker {
     display: none;
   }
-  details[open] .menu {
+  .details[open] .menu {
     animation-name: menuAnim;
   }
-  details[open] summary::before {
+  .details[open] .summary::before {
     content: "X";
   }
-  details[open] summary::after {
+  .details[open] .summary::after {
     content: "";
   }
   .menu {
     height: 0;
     width: fit-content;
     border-radius: 10px;
-    background-color: #AFE1AF;
+    background-color: #ddafe1;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     margin-top: 30px;
     display: flex;
@@ -70,7 +70,7 @@
     overflow: hidden;
     animation: closeMenu 300ms ease-in-out forwards;
   }
-  .menu a {
+  .menu .a {
     padding: 12px 24px;
     margin: 0 16px;
     color: #555555;
@@ -79,26 +79,26 @@
     text-align: center;
     transition: filter 200ms linear 0s;
   }
-  .menu a:nth-of-type(1) {
+  .menu .a:nth-of-type(1) {
     padding-top: 24px;
   }
-  .menu a:nth-last-of-type(1) {
+  .menu .a:nth-last-of-type(1) {
     border-bottom: none;
   }
-  .menu a:hover {
+  .menu .a:hover {
     filter: brightness(200%);
   }
-  details::before {
-    content: "Inventory Maintenance System";
+  .details::before {
+    content: "Inventory Vendor System";
     color:#555555;
-    background-color: #AFE1AF;
+    background-color: #ddafe1;
     position: absolute;
     margin-left: -155px;
     padding: 10px 10px;
     opacity: 2.4;
     border-radius: 5px;
   }
-  details[open]::before {
+  .details[open]::before {
     animation: fadeMe 300ms linear forwards;
   }
   @keyframes menuAnim {

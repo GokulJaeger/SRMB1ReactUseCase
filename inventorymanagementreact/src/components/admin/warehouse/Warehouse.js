@@ -3,6 +3,13 @@ import React from 'react'
 export default function Warehouse() {
     return (
         <div>
+            
+            <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <h2>WareHouse</h2>
             <div class="table-wrapper6">
                 <table class="f6-table">

@@ -3,6 +3,12 @@ import './VendorManagement.css';
 export default function VendorManagement() {
     return (
         <div>
+               <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
              <h1>VendorManagement</h1>
              <div class="table-wrapper4">
                 <table class="f4-table">

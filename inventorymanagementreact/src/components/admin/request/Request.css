@@ -201,7 +201,7 @@ button:focus {
 }
 
 /* back button */
-button.grow_skew_backward::after {
+/* button.grow_skew_backward::after {
     left: -40%;
     right: -20%;
     top: 0;
@@ -211,4 +211,4 @@ button.grow_skew_backward::after {
   }
   button.grow_skew_backward:hover::after {
     transform: skewX(45deg) scale(1, 1);
-  }
+  } */

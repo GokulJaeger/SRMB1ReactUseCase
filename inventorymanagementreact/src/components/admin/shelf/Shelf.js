@@ -4,6 +4,13 @@ import './shelf.css';
 export default function Shelf() {
     return (
         <div>
+
+            <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <h1>Shelf</h1>
             <div class="table-wrapper5">
                 <table class="f5-table">

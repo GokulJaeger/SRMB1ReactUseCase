@@ -4,6 +4,12 @@ import './AdminManagement.css';
 export default function AdminManagement() {
     return (
         <div>
+            <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <h1>AdminManagement</h1>
             <div class="table-wrapper">
                 <table class="fl-table">
@@ -35,6 +41,7 @@ export default function AdminManagement() {
                     </tbody>
                 </table>
             </div>
+            
             </div>
     )
 }

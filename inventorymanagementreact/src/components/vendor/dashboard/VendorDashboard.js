@@ -4,6 +4,12 @@ import './VendorDashboard.css';
 export default function VendorDashboard() {
     return (
         <div>
+             <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <h1>Vendor Dashboard</h1>
             <ul class="nav">
 

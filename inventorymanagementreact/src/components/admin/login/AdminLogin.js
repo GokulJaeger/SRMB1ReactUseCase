@@ -117,57 +117,61 @@ export default function AdminLogin() {
     // console.warn(loginValues.username, loginValues.password);
 
     return (
-        <div className="area">
-            <div class="container">
-                <div class="content">
-                   
+        <div>
+
+           
+            <div className="area">
+                <div class="container">
+                    <div class="content">
+
                         <h1  >ADMIN LOGIN</h1>
-                   
-                    <h4>Enter the credentials for Dashboard</h4>
 
-                    <form onSubmit={handleSubmission} noValidate>
+                        <h4>Enter the credentials for Dashboard</h4>
 
-                        <tr><td> <label>
-                            <i className="far fa-user"></i>Username
-                        </label></td>
-                            <td>   <input
-                                value={loginValues.username}
-                                type="text"
-                                name="username"
-                                id="username"
+                        <form onSubmit={handleSubmission} noValidate>
+
+                            <tr><td> <label>
+                                <i className="far fa-user"></i>Username
+                            </label></td>
+                                <td>   <input
+                                    value={loginValues.username}
+                                    type="text"
+                                    name="username"
+                                    id="username"
+                                    onChange={handleChanges}
+                                /> </td>
+                                <AdminLoginError msg={loginError.username} />
+                            </tr>
+
+                            <label>
+                                <i className="far fa-user"></i>Password
+                            </label>
+                            <input
+                                value={loginValues.password}
+                                type="password"
+                                name="password"
+                                id="password"
                                 onChange={handleChanges}
-                            /> </td>
-                            <AdminLoginError msg={loginError.username} />
-                        </tr>
+                            />
+                            <AdminLoginError msg={loginError.password} />
 
-                        <label>
-                            <i className="far fa-user"></i>Password
-                        </label>
-                        <input
-                            value={loginValues.password}
-                            type="password"
-                            name="password"
-                            id="password"
-                            onChange={handleChanges}
-                        />
-                        <AdminLoginError msg={loginError.password} />
+                            <div>
+                                <button type="submit">
+                                    Submit
+                                </button>
+                                <button type="submit" onClick={handleForget}>
+                                    Forget Password
+                                </button>
+                            </div>
 
-                        <div>
-                            <button type="submit">
-                                Submit
-                            </button>
-                            <button type="submit" onClick={handleForget}>
-                                Forget Password
-                            </button>
-                        </div>
+                        </form>
 
-                    </form>
-
+                    </div>
+                    <div class="flap"></div>
                 </div>
-                <div class="flap"></div>
-            </div>
 
-        </div>
+            </div> 
+              </div>
     )
 }
 

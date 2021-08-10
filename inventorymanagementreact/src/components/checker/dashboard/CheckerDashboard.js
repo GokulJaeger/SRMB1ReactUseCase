@@ -4,6 +4,13 @@ import './CheckerDashboard.css';
 export default function CheckerDashboard() {
     return (
         <div>
+            
+            <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <h1>checker dashboard</h1>
             <ul class="nav">
             

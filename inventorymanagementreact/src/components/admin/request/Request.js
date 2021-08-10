@@ -3,6 +3,12 @@ import './Request.css';
 export default function Request() {
     return (
         <div>
+               <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
             <div className="reqarea">
                 <div class="reqwrapper">
                     <div class="reqcontainer">
@@ -54,10 +60,10 @@ export default function Request() {
                                     <input type="text" name="vendorname" />
                                 </div>
                             </div>
-                            <div class="btns">
+                            {/* <div class="btns">
                                 <button>SUBMIT</button>
                                 <button class="grow_skew_backward">BACK </button>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                     

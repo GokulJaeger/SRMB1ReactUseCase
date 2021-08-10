@@ -3,6 +3,12 @@ import './ManagerManagement.css';
 export default function ManagerManagement() {
     return (
         <div>
+               <div class="button-container">
+                <div class="button-flipper">
+                    <button class="front-button">BACK</button>
+                    <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
+                </div>
+            </div>
              <h1>ManagerManagement</h1>
              <div class="table-wrapper3">
                 <table class="f3-table">

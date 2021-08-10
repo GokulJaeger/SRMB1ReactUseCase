@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import ManagerLoginError from './ManagerLoginError';
 import axios from 'axios';
+import './ManagerLogin.css';
+
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap.js';
 
@@ -79,11 +81,11 @@ export default function ManagerLogin() {
         });
     };
 
-    useEffect(()=>{
-        if(submitted){
+    useEffect(() => {
+        if (submitted) {
             history.push('/managerdashboard');
         }
-    },[submitted, history])
+    }, [submitted, history])
 
     const validate = (values) => {
         let error = {};
@@ -100,11 +102,11 @@ export default function ManagerLogin() {
                 // history.push('/admindashboard');
                 setSubmitted(true);
             }
-            else{
+            else {
                 console.warn("Invalid Credentials!..")
                 history.push('/');
             }
-            
+
         }
 
         return error;
@@ -116,46 +118,50 @@ export default function ManagerLogin() {
     // console.warn(loginValues.username, loginValues.password);
 
     return (
-        <div className="login">
-            <div>
-                <h2>Manager Login</h2>
-                <h4>Enter the credentials for Dashboard</h4>
-                <form onSubmit={handleSubmission} noValidate>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Username
-                        </label>
-                        <input
-                            value={loginValues.username}
-                            type="text"
-                            name="username"
-                            id="username"
-                            onChange={handleChanges}
-                        />
-                        <ManagerLoginError msg={loginError.username} />
-                    </div>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Password
-                        </label>
-                        <input
-                            value={loginValues.password}
-                            type="password"
-                            name="password"
-                            id="password"
-                            onChange={handleChanges}
-                        />
-                        <ManagerLoginError msg={loginError.password} />
-                    </div>
-                    <div>
-                        <button type="submit">
-                            Submit
-                        </button>
-                        <button type="submit" onClick={handleForget}>
-                            Forget Password
-                        </button>
-                    </div>
-                </form>
+        <div className="areaa1">
+            <div class="containerr1">
+                <div class="contentt1">
+
+                    <h2>MANAGER LOGIN</h2>
+                    <h4>Enter the credentials for Dashboard</h4>
+                    <form onSubmit={handleSubmission} noValidate>
+                        <div>
+                            <label>
+                                <i className="far fa-user"></i>Username
+                            </label>
+                            <input
+                                value={loginValues.username}
+                                type="text"
+                                name="username"
+                                id="username"
+                                onChange={handleChanges}
+                            />
+                            <ManagerLoginError msg={loginError.username} />
+                        </div>
+                        <div>
+                            <label>
+                                <i className="far fa-user"></i>Password
+                            </label>
+                            <input
+                                value={loginValues.password}
+                                type="password"
+                                name="password"
+                                id="password"
+                                onChange={handleChanges}
+                            />
+                            <ManagerLoginError msg={loginError.password} />
+                        </div>
+                        <div>
+                            <button type="submit">
+                                Submit
+                            </button>
+                            <button type="submit" onClick={handleForget}>
+                                Forget Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="flap1"></div>
             </div>
         </div>
     )

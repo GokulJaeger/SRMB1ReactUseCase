@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import AdminLoginError from './AdminLoginError';
 import axios from 'axios';
+import './AdminLogin.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap.js';
 
@@ -79,11 +80,11 @@ export default function AdminLogin() {
         });
     };
 
-    useEffect(()=>{
-        if(submitted){
+    useEffect(() => {
+        if (submitted) {
             history.push('/admindashboard');
         }
-    },[submitted, history])
+    }, [submitted, history])
 
     const validate = (values) => {
         let error = {};
@@ -100,11 +101,11 @@ export default function AdminLogin() {
                 // history.push('/admindashboard');
                 setSubmitted(true);
             }
-            else{
+            else {
                 console.warn("Invalid Credentials!..")
                 history.push('/');
             }
-            
+
         }
 
         return error;
@@ -116,25 +117,29 @@ export default function AdminLogin() {
     // console.warn(loginValues.username, loginValues.password);
 
     return (
-        <div className="login">
-            <div>
-                <h2>Admin Login</h2>
-                <h4>Enter the credentials for Dashboard</h4>
-                <form onSubmit={handleSubmission} noValidate>
-                    <div>
-                        <label>
+        <div className="area">
+            <div class="container">
+                <div class="content">
+                   
+                        <h1  >ADMIN LOGIN</h1>
+                   
+                    <h4>Enter the credentials for Dashboard</h4>
+
+                    <form onSubmit={handleSubmission} noValidate>
+
+                        <tr><td> <label>
                             <i className="far fa-user"></i>Username
-                        </label>
-                        <input
-                            value={loginValues.username}
-                            type="text"
-                            name="username"
-                            id="username"
-                            onChange={handleChanges}
-                        />
-                        <AdminLoginError msg={loginError.username} />
-                    </div>
-                    <div>
+                        </label></td>
+                            <td>   <input
+                                value={loginValues.username}
+                                type="text"
+                                name="username"
+                                id="username"
+                                onChange={handleChanges}
+                            /> </td>
+                            <AdminLoginError msg={loginError.username} />
+                        </tr>
+
                         <label>
                             <i className="far fa-user"></i>Password
                         </label>
@@ -146,20 +151,28 @@ export default function AdminLogin() {
                             onChange={handleChanges}
                         />
                         <AdminLoginError msg={loginError.password} />
-                    </div>
-                    <div>
-                        <button type="submit">
-                            Submit
-                        </button>
-                        <button type="submit" onClick={handleForget}>
-                            Forget Password
-                        </button>
-                    </div>
-                </form>
+
+                        <div>
+                            <button type="submit">
+                                Submit
+                            </button>
+                            <button type="submit" onClick={handleForget}>
+                                Forget Password
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="flap"></div>
             </div>
+
         </div>
     )
 }
-// AdminLogin.propTypes = {
-//     setToken: PropTypes.func.isRequired
-// }
+
+
+{/* 
+ AdminLogin.propTypes = { 
+     setToken: PropTypes.func.isRequired
+ } */}

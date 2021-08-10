@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import VendorLoginError from './VendorLoginError';
 import axios from 'axios';
+import './VendorLogin.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap.js';
 
@@ -79,11 +80,11 @@ export default function VendorLogin() {
         });
     };
 
-    useEffect(()=>{
-        if(submitted){
+    useEffect(() => {
+        if (submitted) {
             history.push('/vendordashboard');
         }
-    },[submitted, history])
+    }, [submitted, history])
 
     const validate = (values) => {
         let error = {};
@@ -100,11 +101,11 @@ export default function VendorLogin() {
                 // history.push('/admindashboard');
                 setSubmitted(true);
             }
-            else{
+            else {
                 console.warn("Invalid Credentials!..")
                 history.push('/');
             }
-            
+
         }
 
         return error;
@@ -116,46 +117,50 @@ export default function VendorLogin() {
     // console.warn(loginValues.username, loginValues.password);
 
     return (
-        <div className="login">
-            <div>
-                <h2>Vendor Login</h2>
-                <h4>Enter the credentials for Dashboard</h4>
-                <form onSubmit={handleSubmission} noValidate>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Username
-                        </label>
-                        <input
-                            value={loginValues.username}
-                            type="text"
-                            name="username"
-                            id="username"
-                            onChange={handleChanges}
-                        />
-                        <VendorLoginError msg={loginError.username} />
-                    </div>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Password
-                        </label>
-                        <input
-                            value={loginValues.password}
-                            type="password"
-                            name="password"
-                            id="password"
-                            onChange={handleChanges}
-                        />
-                        <VendorLoginError msg={loginError.password} />
-                    </div>
-                    <div>
-                        <button type="submit">
-                            Submit
-                        </button>
-                        <button type="submit" onClick={handleForget}>
-                            Forget Password
-                        </button>
-                    </div>
-                </form>
+        <div className="areaa2">
+            <div class="containerr2">
+                <div class="contentt2">
+
+                    <h2>Vendor Login</h2>
+                    <h4>Enter the credentials for Dashboard</h4>
+                    <form onSubmit={handleSubmission} noValidate>
+                        <div>
+                            <label>
+                                <i className="far fa-user"></i>Username
+                            </label>
+                            <input
+                                value={loginValues.username}
+                                type="text"
+                                name="username"
+                                id="username"
+                                onChange={handleChanges}
+                            />
+                            <VendorLoginError msg={loginError.username} />
+                        </div>
+                        <div>
+                            <label>
+                                <i className="far fa-user"></i>Password
+                            </label>
+                            <input
+                                value={loginValues.password}
+                                type="password"
+                                name="password"
+                                id="password"
+                                onChange={handleChanges}
+                            />
+                            <VendorLoginError msg={loginError.password} />
+                        </div>
+                        <div>
+                            <button type="submit">
+                                Submit
+                            </button>
+                            <button type="submit" onClick={handleForget}>
+                                Forget Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="flap2"></div>
             </div>
         </div>
     )

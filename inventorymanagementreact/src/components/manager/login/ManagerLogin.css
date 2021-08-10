@@ -1,4 +1,4 @@
-.containerr2 {
+.containerr1 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -12,7 +12,7 @@
     box-shadow: 0 0 20px 8px #d0d0d0;
   }
   
-  .contentt2 {
+  .contentt1 {
     position: absolute;
     top: 50%;
     transform: translatey(-50%);
@@ -23,13 +23,13 @@
     margin-left:20%;
   }
   
-  .flap2 {
+  .flap1 {
     width: 100%;
     height: 100%;
     margin-left: -50%;
   }
   
-  .flap2::before {
+  .flap1::before {
     position: absolute;
     content: "";
     height: 100%;
@@ -41,7 +41,7 @@
   
   }
   
-  .flap2::after {
+  .flap1::after {
     position: absolute;
     content: "";
     height: 100%;
@@ -53,11 +53,11 @@
     transition: 1s;
   }
   
-  .containerr2:hover .flap2::after {
+  .containerr1:hover .flap1::after {
     transform: translatex(300px);
   }
   
-  .containerr2:hover .flap2::before {
+  .containerr1:hover .flap1::before {
     transform: translatex(-300px);
   }
   

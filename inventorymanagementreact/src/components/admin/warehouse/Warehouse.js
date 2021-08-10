@@ -1,12 +1,11 @@
 import React from 'react'
-import './AdminManagement.css';
 
-export default function AdminManagement() {
+export default function Warehouse() {
     return (
         <div>
-            <h1>AdminManagement</h1>
-            <div class="table-wrapper">
-                <table class="fl-table">
+            <h2>WareHouse</h2>
+            <div class="table-wrapper6">
+                <table class="f6-table">
                     <thead>
                         <tr>
                             <th>Header 1</th>
@@ -35,6 +34,6 @@ export default function AdminManagement() {
                     </tbody>
                 </table>
             </div>
-            </div>
+        </div>
     )
 }

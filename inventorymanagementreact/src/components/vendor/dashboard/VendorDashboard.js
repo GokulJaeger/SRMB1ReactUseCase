@@ -4,19 +4,61 @@ import './VendorDashboard.css';
 export default function VendorDashboard() {
     return (
         <div>
-            <div>
-                <details>
-                    <summary></summary>
-                    <nav className="menu">
-                        <a href="/vendordashboard">Home</a>
-                        <a>Vendor supply check</a>
-                        <a>Suppliers</a>
-                    </nav>
-                </details>
-            </div>
-            <div>
-                <hr></hr>
-            </div>
+            <h1>Vendor Dashboard</h1>
+            <ul class="nav">
+
+
+                <li>
+                    <a href="/request" target="_blank">
+                        <i class="fab fa-twitter fa-3x twitter">
+                            <div class="circle"></div>
+                        </i>
+                        <div class="title">Request</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/shelf" target="_blank">
+                        <i class="fab fa-codepen fa-3x codepen">
+                            <div class="circle"></div></i>
+                        <div class="title">Shelf</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/warehouse" target="_blank">
+                        <i class="fab fa-codepen fa-3x codepen">
+                            <div class="circle"></div></i>
+                        <div class="title">Warehouse</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/request" target="_blank">
+                        <i class="fab fa-twitter fa-3x twitter">
+                            <div class="circle"></div>
+                        </i>
+                        <div class="title">Request</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/request" target="_blank">
+                        <i class="fab fa-twitter fa-3x twitter">
+                            <div class="circle"></div>
+                        </i>
+                        <div class="title">Request</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/request" target="_blank">
+                        <i class="fab fa-twitter fa-3x twitter">
+                            <div class="circle"></div>
+                        </i>
+                        <div class="title">Request</div>
+                    </a>
+                </li>
+                <div class="background"></div>
+
+            </ul>
         </div>
     )
 }

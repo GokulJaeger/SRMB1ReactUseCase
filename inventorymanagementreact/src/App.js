@@ -15,6 +15,15 @@ import ForgotChecker from './components/checker/login/ForgotChecker';
 import VendorLogin from './components/vendor/login/VendorLogin';
 import VendorDashboard from './components/vendor/dashboard/VendorDashboard';
 import ForgotVendor from './components/vendor/login/ForgotVendor';
+import AdminManagement from './components/admin/manageusers/AdminManagement';
+import CheckerManagement from './components/admin/manageusers/CheckerManagement';
+import ManagerManagement from './components/admin/manageusers/ManagerManagement';
+import VendorManagement from './components/admin/manageusers/VendorManagement';
+import AdminAlerts from './components/admin/alert/AdminAlerts';
+import Request from './components/admin/request/Request';
+import Shelf from './components/admin/shelf/Shelf';
+import Warehouse from './components/admin/warehouse/Warehouse';
+import OrderDetails from './components/admin/warehouse/OrderDetails';
 
 
 function App() {
@@ -35,14 +44,26 @@ function App() {
           <Route path='/managerdashboard' exact component={ManagerDashboard}></Route>
           <Route path='/checkerdashboard' exact component={CheckerDashboard}></Route>
           <Route path='/vendordashboard' exact component={VendorDashboard}></Route>
-          
+
           {/* Forgot */}
           <Route path='/forgotadmin' exact component={ForgotAdmin}></Route>
           <Route path='/forgotmanager' exact component={ForgotManager}></Route>
           <Route path='/forgotchecker' exact component={ForgotChecker}></Route>
           <Route path='/forgotvendor' exact component={ForgotVendor}></Route>
+          {/* admin dashbord */}
+          <Route path='/adminmanagement' exact component={AdminManagement}></Route>
+          <Route path='/checkermanagement' exact component={CheckerManagement}></Route>
+          <Route path='/managermanagement' exact component={ManagerManagement}></Route>
+          <Route path='/vendormanagement' exact component={VendorManagement}></Route>
+          <Route path='/adminalert' exact component={AdminAlerts}></Route>
 
-          </Switch>
+          <Route path='/request' exact component={Request}></Route>
+          <Route path='/shelf' exact component={Shelf}></Route>
+          <Route path='/warehouse' exact component={Warehouse}></Route>
+          <Route path='/orderdetails' exact component={OrderDetails}></Route>
+       
+       
+        </Switch>
       </Router>
     </div>
   );

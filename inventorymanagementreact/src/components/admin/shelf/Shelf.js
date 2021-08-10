@@ -1,12 +1,12 @@
 import React from 'react'
-import './AdminManagement.css';
+import './shelf.css';
 
-export default function AdminManagement() {
+export default function Shelf() {
     return (
         <div>
-            <h1>AdminManagement</h1>
-            <div class="table-wrapper">
-                <table class="fl-table">
+            <h1>Shelf</h1>
+            <div class="table-wrapper5">
+                <table class="f5-table">
                     <thead>
                         <tr>
                             <th>Header 1</th>
@@ -35,6 +35,6 @@ export default function AdminManagement() {
                     </tbody>
                 </table>
             </div>
-            </div>
+        </div>
     )
 }

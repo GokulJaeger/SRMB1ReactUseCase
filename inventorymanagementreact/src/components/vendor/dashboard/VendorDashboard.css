@@ -1,120 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+.adminnavbody {
+  background: #edf5e1;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0.5px 0.5px 0 #CCCCCC;
+  margin-top: -5%;
+}
 
-  /* body {
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-  } */
-  .details {
-    margin-left: 30px;
-    margin-top:30px;
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.75s;
+}
+
+.nav {
+  padding: 0px;
+  width: 640px;
+  margin: 100px auto auto auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li a {
+  padding: 30px;
+  float: left;
+  width: 100px;
+  text-align: center;
+  font-size: 15px;
+  color: #edf5e1;
+  text-decoration: none;
+}
+
+li a:hover .circle {
+  position: relative;
+  z-index: 1;
+  top: -60px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  animation: illuminate 2s ease-out infinite;
+  background: #fdc6be;
+}
+
+li i {
+  height: 50px;
+}
+
+li a:hover i {
+  transform: translateY(-10px);
+}
+
+li a .title {
+  font-size: 0px;
+}
+
+li a:hover .title {
+  transform: translateY(10px);
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+li a.title:hover {
+  transform: translateY(-10px);
+}
+
+.nav li:first-child a {
+  background: #05386b !important;
+}
+
+.nav li:nth-child(2) a {
+  background: #379683 !important;
+}
+
+.nav li:nth-child(3) a {
+  background: #5cdb95 !important;
+}
+
+.nav li:nth-child(4) a {
+  background: #8ee4af !important;
+}
+
+.nav li:first-child:hover ~ .background {
+  background: #05386b;
+}
+
+.nav li:nth-child(2):hover ~ .background {
+  background: #379683;
+}
+
+.nav li:nth-child(3):hover ~ .background {
+  background: #5cdb95;
+}
+
+.nav li:nth-child(4):hover ~ .background {
+  background: #8ee4af;
+}
+
+@keyframes illuminate {
+  0% {
+    transform: scale(0.7, 0.7);
+    opacity: 0.7;
   }
-  .hr{
-    border: 2px solid #555;
+  50% {
+    opacity: 0.3;
   }
-  .summary {
-    writing-mode: vertical-lr;
-    text-align: center;
-    padding: 12px 10px;
-    width: 23px;
-    height: 17px;
-    background-color: #ddafe1;
-    border: 2px solid #555555;
-    border-radius: 10px;
-    color: #555555;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-    transition: transform 200ms ease-in-out 0s;
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
   }
-  .summary::before,
-  .summary::after {
-    position: static;
-    top: 0;
-    left: 0;
-  }
-  .summary::before {
-    content: "";
-  }
-  .summary::after {
-    content: "III";
-    letter-spacing: -1px;
-  }
-  .summary:hover {
-    transform: scale(1.1);
-  }
-  .summary::marker {
-    font-size: 0;
-  }
-  .summary::-webkit-details-marker {
-    display: none;
-  }
-  .details[open] .menu {
-    animation-name: menuAnim;
-  }
-  .details[open] .summary::before {
-    content: "X";
-  }
-  .details[open] .summary::after {
-    content: "";
-  }
-  .menu {
-    height: 0;
-    width: fit-content;
-    border-radius: 10px;
-    background-color: #ddafe1;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    animation: closeMenu 300ms ease-in-out forwards;
-  }
-  .menu .a {
-    padding: 12px 24px;
-    margin: 0 16px;
-    color: #555555;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    text-align: center;
-    transition: filter 200ms linear 0s;
-  }
-  .menu .a:nth-of-type(1) {
-    padding-top: 24px;
-  }
-  .menu .a:nth-last-of-type(1) {
-    border-bottom: none;
-  }
-  .menu .a:hover {
-    filter: brightness(200%);
-  }
-  .details::before {
-    content: "Inventory Vendor System";
-    color:#555555;
-    background-color: #ddafe1;
-    position: absolute;
-    margin-left: -155px;
-    padding: 10px 10px;
-    opacity: 2.4;
-    border-radius: 5px;
-  }
-  .details[open]::before {
-    animation: fadeMe 300ms linear forwards;
-  }
-  @keyframes menuAnim {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 180px;
-    }
-  }
-  @keyframes fadeMe {
-    0% {
-      opacity: 0.4;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
+}
+/* submenu */
+
+.nav,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left:35%;
+  margin-top:2%;
+}
+
+/* Dropdown */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+  margin-top:10%;
+  margin-left:-14.9%;
+}
+
+.submenu li {
+  background-color: #34495e;
+  position: relative;
+  overflow: hidden;
+}
+
+.submenu > li > a {
+  padding: 1em 2em;
+}
+
+.submenu > li::after {
+  content: "";
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Odd stuff */
+.submenu > li:nth-child(odd) {
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -30%;
+  transform: skewX(-25deg) rotate(3deg);
+}
+
+/* Even stuff */
+.submenu > li:nth-child(even) {
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submenu li {
+  transition: 0.2s ease transform;
+}
+
+.nav > li:hover .submenu,
+.nav > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav > li:hover .submenu li:nth-child(even) {
+  transform: skewX(25deg) translateX(15px);
+}
+
+.nav > li:hover .submenu li:nth-child(odd) {
+  transform: skewX(-25deg) translateX(-15px);
+}

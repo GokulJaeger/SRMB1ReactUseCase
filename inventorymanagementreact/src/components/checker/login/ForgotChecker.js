@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import CheckerLoginError from './CheckerLoginError';
@@ -51,73 +51,78 @@ export default function ForgotChecker() {
         let error = {};
 
 
-        if(!values.phone){
+        if (!values.phone) {
             error.phone = "Phone cannot be blank";
         }
-        if(!values.aadhar){
+        if (!values.aadhar) {
             error.aadhar = "Aadhar cannot be blank";
         }
 
         console.log(Object.keys(error).length);
         if (Object.keys(error).length === 0) {
-                if (apiValues[0].phone === forgotValues.phone && apiValues[0].aadhar === forgotValues.aadhar) {
-                    setSubmit(true);
-                }
-                else{
-                    console.warn("Invalid Credentials!..")
-                    history.push('/');
-                }
+            if (apiValues[0].phone === forgotValues.phone && apiValues[0].aadhar === forgotValues.aadhar) {
+                setSubmit(true);
+            }
+            else {
+                console.warn("Invalid Credentials!..")
+                history.push('/');
+            }
         }
 
         return error;
     }
 
 
-    const handleLoginPage=()=>{
+    const handleLoginPage = () => {
         history.push('/checkerlogin');
     }
     return (
-        <div className="login">
-            <div>
-                <h2>Get your Credentials Here</h2>
-                <h4>Enter the credentials...</h4>
-                <form onSubmit={handleSubmission} noValidate>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Phone Number
-                        </label>
-                        <input
-                            value={forgotValues.phone}
-                            type="text"
-                            name="phone"
-                            id="phone"
-                            onChange={handleChanges}
-                        />
-                        <CheckerLoginError msg={forgotError.phone} />
+
+        <div>
+            <div className="area">
+                <div class="container">
+                    <div class="content">
+                        <h2>Get your Credentials Here</h2>
+                        <h4>Enter the credentials...</h4>
+                        <form onSubmit={handleSubmission} noValidate>
+                            <div>
+                                <label className="lab">
+                                    PhoneNumber
+                                </label>
+                                <input
+                                    value={forgotValues.phone}
+                                    type="text"
+                                    name="phone"
+                                    id="phone"
+                                    onChange={handleChanges}
+                                />
+                                <CheckerLoginError msg={forgotError.phone} />
+                            </div>
+                            <div>
+                                <label className="lab">
+                                    AadharNumber
+                                </label>
+                                <input
+                                    value={forgotValues.aadhar}
+                                    type="text"
+                                    name="aadhar"
+                                    id="aadhar"
+                                    onChange={handleChanges}
+                                />
+                                <CheckerLoginError msg={forgotError.aadhar} />
+                            </div>
+                            <div>
+                                <button type="submit">
+                                    Submit
+                                </button>
+                                <button type="submit" onClick={handleLoginPage}>
+                                    Login
+                                </button>
+                            </div>
+                            {submit && (<p>Your credentials: Username:{apiValues[0].username} and Passowrd: {apiValues[0].password}</p>)}
+                        </form>
                     </div>
-                    <div>
-                        <label>
-                            <i className="far fa-user"></i>Aadhar Number
-                        </label>
-                        <input
-                            value={forgotValues.aadhar}
-                            type="text"
-                            name="aadhar"
-                            id="aadhar"
-                            onChange={handleChanges}
-                        />
-                        <CheckerLoginError msg={forgotError.aadhar} />
-                    </div>
-                    <div>
-                        <button type="submit">
-                            Submit
-                        </button>
-                        <button type="submit" onClick={handleLoginPage}>
-                            Login
-                        </button>
-                    </div>
-                    {submit && (<p>Your credentials: Username:{apiValues[0].username} and Passowrd: {apiValues[0].password}</p>)}
-                </form>
+                </div>
             </div>
         </div>
     )

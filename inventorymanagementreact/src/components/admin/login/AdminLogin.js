@@ -119,7 +119,7 @@ export default function AdminLogin() {
     return (
         <div>
 
-           
+
             <div className="area">
                 <div class="container">
                     <div class="content">
@@ -128,22 +128,24 @@ export default function AdminLogin() {
 
                         <h4>Enter the credentials for Dashboard</h4>
 
-                        <form onSubmit={handleSubmission} noValidate>
+                        <form className="f1" onSubmit={handleSubmission} noValidate>
 
-                            <tr><td> <label>
-                                <i className="far fa-user"></i>Username
-                            </label></td>
-                                <td>   <input
+                             <label className="lab">
+                                <i ></i>Username
+                            </label>
+                                
+                                      <input
                                     value={loginValues.username}
                                     type="text"
                                     name="username"
                                     id="username"
+                                  
                                     onChange={handleChanges}
-                                /> </td>
+                                /> 
                                 <AdminLoginError msg={loginError.username} />
-                            </tr>
+                            
 
-                            <label>
+                            <label className="lab">
                                 <i className="far fa-user"></i>Password
                             </label>
                             <input
@@ -170,8 +172,8 @@ export default function AdminLogin() {
                     <div class="flap"></div>
                 </div>
 
-            </div> 
-              </div>
+            </div>
+        </div>
     )
 }
 

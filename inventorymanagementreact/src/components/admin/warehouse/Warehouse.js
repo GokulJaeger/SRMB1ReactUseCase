@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Warehouse.css';
 export default function Warehouse() {
     return (
         <div>

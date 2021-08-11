@@ -128,7 +128,7 @@ export default function CheckerLogin() {
                     <h4>Enter the credentials for Dashboard</h4>
                     <form onSubmit={handleSubmission} noValidate>
                         <div>
-                            <label>
+                            <label className="lab">
                                 <i className="far fa-user"></i>Username
                             </label>
                             <input
@@ -141,7 +141,7 @@ export default function CheckerLogin() {
                             <ManagerLoginError msg={loginError.username} />
                         </div>
                         <div>
-                            <label>
+                            <label className="lab">
                                 <i className="far fa-user"></i>Password
                             </label>
                             <input

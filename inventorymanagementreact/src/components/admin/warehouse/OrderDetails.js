@@ -1,6 +1,13 @@
 import React from 'react'
-
+import 'OrderDetails.css';
 export default function OrderDetails() {
+    const[]
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/api/wgrocery").then((data)=>{
+
+        })
+    }, [])
     return (
         <div>
 

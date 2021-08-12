@@ -1,11 +1,15 @@
 import React from 'react'
 import './ManagerManagement.css';
+import { useHistory } from "react-router-dom";
 export default function ManagerManagement() {
+    const history = useHistory();
     return (
         <div>
                <div class="button-container">
                 <div class="button-flipper">
-                    <button class="front-button">BACK</button>
+                    <button class="front-button" onClick={() => {
+                        history.goBack();
+                    }}>BACK</button>
                     <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
                 </div>
             </div>

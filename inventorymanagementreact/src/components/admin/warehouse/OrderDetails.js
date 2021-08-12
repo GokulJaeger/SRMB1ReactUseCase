@@ -1,11 +1,17 @@
-import React from 'react'
-import 'OrderDetails.css';
+import React, {useState, useEffect} from 'react'
+import './OrderDetails.css';
+import { useHistory } from "react-router-dom";
+import axios from 'axios';
+
 export default function OrderDetails() {
-    const[]
+    const history = useHistory();
+    const[grocery, setgrocery]=useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/wgrocery").then((data)=>{
-
+        axios.get("http://localhost:8080/api/wgrocery").then((datas)=>{
+        setgrocery(datas.data);
+        }).catch((err)=>{
+            console.warn(err);
         })
     }, [])
     return (
@@ -13,7 +19,9 @@ export default function OrderDetails() {
 
             <div class="button-container">
                 <div class="button-flipper">
-                    <button class="front-button">BACK</button>
+                    <button class="front-button" onClick={() => {
+                        history.goBack();
+                    }}>BACK</button>
                     <button class="back-button"><a href="/" className="bckbtn">LOGOUT</a></button>
                 </div>
             </div>
@@ -22,29 +30,27 @@ export default function OrderDetails() {
                 <table class="f6-table">
                     <thead>
                         <tr>
-                            <th>Header 1</th>
-                            <th>Header 2</th>
-                            <th>Header 3</th>
-                            <th>Header 4</th>
-                            <th>Header 5</th>
+                            <th>Product Code</th>
+                            <th>Product Name</th>
+                            <th>Product Desc</th>
+                            <th>Product Categ</th>
+                            <th>Product Price</th>
+                            <th>Product Quantity</th>
+                            <th>Manu Date</th>
+                            <th>Exp Date</th>
+                            <th>Order Code</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                        </tr>
-                        <tr>
-                            <td>Content 2</td>
-                            <td>Content 2</td>
-                            <td>Content 2</td>
-                            <td>Content 2</td>
-                            <td>Content 2</td>
-                        </tr>
-
+                        {
+                            grocery.map((x)=>{
+                                return(
+                                    <tr key={x.id}>
+                                        <td>{x.pcode}</td>
+                                    </tr>
+                                );
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
